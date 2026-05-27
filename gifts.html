@@ -28,8 +28,8 @@
     .stats-bar {
       display: flex;
       justify-content: center;
-      gap: 12px;
-      padding: 16px 20px;
+      gap: 10px;
+      padding: 14px 20px;
       background: white;
       box-shadow: 0 2px 8px rgba(0,0,0,0.08);
       flex-wrap: wrap;
@@ -38,62 +38,45 @@
       background: linear-gradient(135deg, #f9f0f5, #fdf6f0);
       border: 2px solid #e8d5e8;
       border-radius: 12px;
-      padding: 12px 20px;
+      padding: 10px 16px;
       text-align: center;
-      min-width: 130px;
+      min-width: 115px;
     }
-    .stat-card .num {
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: #8b5e83;
-    }
-    .stat-card .lbl {
-      font-size: 0.78rem;
-      color: #8a7a8a;
-      margin-top: 2px;
-    }
+    .stat-card .num { font-size: 1.5rem; font-weight: 700; color: #8b5e83; }
+    .stat-card .lbl { font-size: 0.75rem; color: #8a7a8a; margin-top: 2px; }
     .stat-card.gold .num { color: #c0a060; }
     .stat-card.green .num { color: #4a9a6a; }
+    .stat-card.blue .num { color: #3a7abf; }
+    .stat-card.orange .num { color: #d07030; }
 
     .controls {
       display: flex;
-      gap: 12px;
-      padding: 16px 20px;
+      gap: 10px;
+      padding: 14px 20px;
       background: white;
       border-bottom: 1px solid #eee;
       flex-wrap: wrap;
       align-items: center;
     }
-    .search-box {
-      flex: 1;
-      min-width: 200px;
-      position: relative;
-    }
+    .search-box { flex: 1; min-width: 180px; position: relative; }
     .search-box input {
       width: 100%;
-      padding: 10px 16px 10px 40px;
+      padding: 9px 14px 9px 38px;
       border: 2px solid #e8d5e8;
       border-radius: 25px;
-      font-size: 1rem;
+      font-size: 0.95rem;
       font-family: 'Heebo', sans-serif;
       outline: none;
       transition: border-color 0.2s;
       direction: rtl;
     }
     .search-box input:focus { border-color: #8b5e83; }
-    .search-box .icon {
-      position: absolute;
-      left: 14px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: #8b5e83;
-      font-size: 1.1rem;
-    }
+    .search-box .icon { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: #8b5e83; }
     select {
-      padding: 10px 16px;
+      padding: 9px 14px;
       border: 2px solid #e8d5e8;
       border-radius: 25px;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       font-family: 'Heebo', sans-serif;
       outline: none;
       cursor: pointer;
@@ -102,44 +85,41 @@
       direction: rtl;
     }
     select:focus { border-color: #8b5e83; }
-
-    .filter-btns {
-      display: flex;
-      gap: 8px;
-    }
+    .filter-btns { display: flex; gap: 6px; flex-wrap: wrap; }
     .filter-btn {
-      padding: 8px 16px;
+      padding: 7px 13px;
       border: 2px solid #e8d5e8;
       border-radius: 20px;
       background: white;
       cursor: pointer;
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       font-family: 'Heebo', sans-serif;
       transition: all 0.2s;
       white-space: nowrap;
     }
     .filter-btn.active { background: #8b5e83; color: white; border-color: #8b5e83; }
     .filter-btn:hover:not(.active) { border-color: #8b5e83; color: #8b5e83; }
-
     .export-btn {
-      padding: 10px 20px;
+      padding: 9px 18px;
       background: linear-gradient(135deg, #c0a060, #a08040);
-      color: white;
-      border: none;
-      border-radius: 25px;
-      font-size: 0.9rem;
-      font-family: 'Heebo', sans-serif;
-      cursor: pointer;
-      font-weight: 500;
-      transition: opacity 0.2s;
-      white-space: nowrap;
+      color: white; border: none; border-radius: 25px;
+      font-size: 0.88rem; font-family: 'Heebo', sans-serif;
+      cursor: pointer; font-weight: 500; transition: opacity 0.2s; white-space: nowrap;
     }
     .export-btn:hover { opacity: 0.85; }
+    .add-btn {
+      padding: 9px 18px;
+      background: linear-gradient(135deg, #4a9a6a, #2a7a4a);
+      color: white; border: none; border-radius: 25px;
+      font-size: 0.88rem; font-family: 'Heebo', sans-serif;
+      cursor: pointer; font-weight: 500; transition: opacity 0.2s; white-space: nowrap;
+    }
+    .add-btn:hover { opacity: 0.85; }
 
     .table-wrapper {
       overflow-x: auto;
       padding: 0 10px 30px;
-      max-width: 1000px;
+      max-width: 1100px;
       margin: 0 auto;
     }
     table {
@@ -149,47 +129,27 @@
       border-radius: 12px;
       overflow: hidden;
       box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-      margin-top: 16px;
+      margin-top: 14px;
     }
-    thead tr {
-      background: linear-gradient(135deg, #8b5e83, #a07090);
-      color: white;
-    }
-    th {
-      padding: 14px 16px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      text-align: right;
-    }
-    tbody tr {
-      border-bottom: 1px solid #f0e8f0;
-      transition: background 0.15s;
-    }
+    thead tr { background: linear-gradient(135deg, #8b5e83, #a07090); color: white; }
+    th { padding: 12px 10px; font-size: 0.85rem; font-weight: 600; text-align: right; }
+    tbody tr { border-bottom: 1px solid #f0e8f0; transition: background 0.15s; }
     tbody tr:hover { background: #fdf6fd; }
     tbody tr.has-gift { background: #f0faf4; }
     tbody tr.has-gift:hover { background: #e8f8ee; }
-    tbody tr.group-header { background: linear-gradient(135deg, #f5ecf5, #fdf6f0); }
-    tbody tr.group-header td {
-      font-weight: 700;
-      color: #8b5e83;
-      font-size: 0.95rem;
-      padding: 10px 16px;
-      border-bottom: 2px solid #e8d5e8;
-    }
-    td {
-      padding: 10px 16px;
-      font-size: 0.9rem;
-    }
+    tbody tr.custom-row { border-right: 3px solid #4a9a6a; }
+    td { padding: 8px 10px; font-size: 0.87rem; }
     td.name { font-weight: 500; }
-    td.group-cell { color: #8a7a8a; font-size: 0.82rem; }
+    td.group-cell { color: #8a7a8a; font-size: 0.8rem; }
     td.count { text-align: center; font-weight: 500; color: #8b5e83; }
-    td.gift-cell { width: 140px; }
-    .gift-input {
-      width: 120px;
-      padding: 7px 12px;
+    td.num-cell { text-align: center; }
+
+    .num-input {
+      width: 80px;
+      padding: 5px 8px;
       border: 2px solid #e8d5e8;
       border-radius: 20px;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       font-family: 'Heebo', sans-serif;
       outline: none;
       text-align: center;
@@ -198,29 +158,92 @@
     }
     .gift-input:focus { border-color: #4a9a6a; box-shadow: 0 0 0 3px rgba(74,154,106,0.15); }
     .gift-input.filled { border-color: #4a9a6a; background: #f0faf4; font-weight: 600; color: #2a7a4a; }
+    .arrived-input:focus { border-color: #3a7abf; box-shadow: 0 0 0 3px rgba(58,122,191,0.15); }
+    .arrived-input.filled { border-color: #3a7abf; background: #f0f4fa; font-weight: 600; color: #1a5a9a; }
 
-    .result-count {
-      text-align: center;
-      padding: 8px;
-      color: #8a7a8a;
-      font-size: 0.85rem;
+    .action-btns { display: flex; gap: 4px; justify-content: center; }
+    .action-btn {
+      width: 28px; height: 28px;
+      border: none; border-radius: 50%;
+      cursor: pointer; font-size: 0.85rem;
+      display: flex; align-items: center; justify-content: center;
+      transition: opacity 0.2s;
     }
+    .action-btn:hover { opacity: 0.75; }
+    .edit-btn { background: #e8f0fa; color: #3a7abf; }
+    .delete-btn { background: #fae8e8; color: #bf3a3a; }
 
-    .no-results {
-      text-align: center;
-      padding: 40px;
-      color: #8a7a8a;
-      font-size: 1.1rem;
+    .result-count { text-align: center; padding: 8px; color: #8a7a8a; font-size: 0.83rem; }
+    .no-results { text-align: center; padding: 40px; color: #8a7a8a; font-size: 1.1rem; }
+
+    /* Modal */
+    .modal-overlay {
+      display: none; position: fixed; inset: 0;
+      background: rgba(0,0,0,0.5); z-index: 1000;
+      align-items: center; justify-content: center;
+    }
+    .modal-overlay.open { display: flex; }
+    .modal {
+      background: white; border-radius: 16px;
+      padding: 0; width: 90%; max-width: 440px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      direction: rtl;
+    }
+    .modal-header {
+      background: linear-gradient(135deg, #8b5e83, #a07090);
+      color: white; padding: 16px 20px;
+      border-radius: 16px 16px 0 0;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .modal-header h2 { font-size: 1.1rem; }
+    .modal-close {
+      background: none; border: none; color: white;
+      font-size: 1.4rem; cursor: pointer; line-height: 1;
+    }
+    .modal-body { padding: 20px; }
+    .form-group { margin-bottom: 14px; }
+    .form-group label { display: block; font-size: 0.88rem; font-weight: 500; margin-bottom: 5px; color: #5a4a5a; }
+    .form-group input, .form-group select {
+      width: 100%; padding: 9px 14px;
+      border: 2px solid #e8d5e8; border-radius: 10px;
+      font-size: 0.95rem; font-family: 'Heebo', sans-serif;
+      outline: none; transition: border-color 0.2s; direction: rtl;
+      background: white;
+    }
+    .form-group input:focus, .form-group select:focus { border-color: #8b5e83; }
+    .modal-footer { display: flex; gap: 10px; padding: 0 20px 20px; }
+    .btn-save {
+      flex: 1; padding: 11px;
+      background: linear-gradient(135deg, #8b5e83, #a07090);
+      color: white; border: none; border-radius: 10px;
+      font-size: 1rem; font-family: 'Heebo', sans-serif;
+      cursor: pointer; font-weight: 600;
+    }
+    .btn-save:hover { opacity: 0.9; }
+    .btn-cancel {
+      padding: 11px 20px;
+      background: #f0e8f0; color: #5a4a5a;
+      border: none; border-radius: 10px;
+      font-size: 1rem; font-family: 'Heebo', sans-serif;
+      cursor: pointer;
+    }
+    .new-group-row { display: flex; gap: 6px; margin-top: 6px; }
+    .new-group-row input { flex: 1; }
+    .new-group-row button {
+      padding: 9px 14px; background: #8b5e83; color: white;
+      border: none; border-radius: 10px;
+      font-family: 'Heebo', sans-serif; cursor: pointer; font-size: 0.85rem;
+      white-space: nowrap;
     }
 
     @media (max-width: 600px) {
       header h1 { font-size: 1.5rem; }
-      .stats-bar { gap: 8px; padding: 12px; }
-      .stat-card { min-width: 100px; padding: 10px 14px; }
-      .stat-card .num { font-size: 1.3rem; }
-      .controls { padding: 12px; gap: 8px; }
-      th, td { padding: 8px 10px; font-size: 0.82rem; }
-      .gift-input { width: 90px; padding: 6px 8px; }
+      .stats-bar { gap: 6px; padding: 10px; }
+      .stat-card { min-width: 90px; padding: 8px 10px; }
+      .stat-card .num { font-size: 1.2rem; }
+      .controls { padding: 10px; gap: 6px; }
+      th, td { padding: 6px 6px; font-size: 0.78rem; }
+      .num-input { width: 65px; padding: 4px 5px; }
       td.group-cell { display: none; }
     }
   </style>
@@ -229,7 +252,7 @@
 
 <header>
   <h1>💍 מתנות החתונה</h1>
-  <p>רשימת מוזמנים · הזנת מתנות · מעקב בזמן אמת</p>
+  <p>רשימת מוזמנים · הגיעו בפועל · מתנות · מעקב בזמן אמת</p>
 </header>
 
 <div class="stats-bar">
@@ -241,13 +264,21 @@
     <div class="num" id="paidCount">0</div>
     <div class="lbl">שילמו מתנה</div>
   </div>
+  <div class="stat-card blue">
+    <div class="num" id="arrivedTotal">0</div>
+    <div class="lbl">הגיעו בפועל</div>
+  </div>
+  <div class="stat-card orange">
+    <div class="num" id="expectedTotal">0</div>
+    <div class="lbl">מוזמנים צפויים</div>
+  </div>
   <div class="stat-card">
     <div class="num" id="remainCount">0</div>
-    <div class="lbl">טרם הוזן</div>
+    <div class="lbl">טרם הוזנה מתנה</div>
   </div>
   <div class="stat-card">
     <div class="num" id="totalGuests">362</div>
-    <div class="lbl">סה"כ מוזמנים</div>
+    <div class="lbl">סה"כ ברשימה</div>
   </div>
 </div>
 
@@ -263,7 +294,9 @@
     <button class="filter-btn active" id="btn-all" onclick="setGiftFilter('all')">הכל</button>
     <button class="filter-btn" id="btn-paid" onclick="setGiftFilter('paid')">✅ שילמו</button>
     <button class="filter-btn" id="btn-unpaid" onclick="setGiftFilter('unpaid')">⏳ טרם הוזן</button>
+    <button class="filter-btn" id="btn-arrived" onclick="setGiftFilter('arrived')">🟢 הגיעו</button>
   </div>
+  <button class="add-btn" onclick="openModal('add')">➕ הוסף מוזמן</button>
   <button class="export-btn" onclick="exportExcel()">📥 ייצוא לאקסל</button>
 </div>
 
@@ -274,8 +307,10 @@
       <tr>
         <th>שם מוזמן</th>
         <th>קבוצה</th>
-        <th style="text-align:center">מגיעים</th>
+        <th style="text-align:center">ציפי</th>
+        <th style="text-align:center">הגיעו בפועל</th>
         <th style="text-align:center">מתנה (₪)</th>
+        <th style="text-align:center">✏️</th>
       </tr>
     </thead>
     <tbody id="tableBody"></tbody>
@@ -283,32 +318,101 @@
   <div class="no-results" id="noResults" style="display:none">לא נמצאו תוצאות 🔍</div>
 </div>
 
+<!-- Modal -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModalOnBg(event)">
+  <div class="modal">
+    <div class="modal-header">
+      <h2 id="modalTitle">➕ הוסף מוזמן</h2>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+    </div>
+    <div class="modal-body">
+      <input type="hidden" id="editId">
+      <div class="form-group">
+        <label>שם מוזמן *</label>
+        <input type="text" id="fName" placeholder="לדוגמה: ישראל ישראלי">
+      </div>
+      <div class="form-group">
+        <label>נייד</label>
+        <input type="text" id="fPhone" placeholder="05X-XXXXXXX">
+      </div>
+      <div class="form-group">
+        <label>כמה מגיעים (ציפי)</label>
+        <input type="number" id="fCount" min="0" value="1">
+      </div>
+      <div class="form-group">
+        <label>קבוצה</label>
+        <select id="fGroup"></select>
+        <div class="new-group-row">
+          <input type="text" id="fGroupNew" placeholder="קבוצה חדשה...">
+          <button onclick="addNewGroup()">הוסף</button>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-save" onclick="saveModal()">💾 שמור</button>
+      <button class="btn-cancel" onclick="closeModal()">ביטול</button>
+    </div>
+  </div>
+</div>
+
 <script>
 const GUESTS_DATA = [{"id": 2, "name": "מירי מטולה ואבי", "phone": "506817915", "count": 2, "group": "משפחה שושנה אמא", "gift": 0}, {"id": 3, "name": "יוכי ודוד גוילי", "phone": "523927982", "count": 2, "group": "משפחה שושנה אמא", "gift": 0}, {"id": 4, "name": "יוני ומצדה גוילי", "phone": "525914007", "count": 2, "group": "משפחה שושנה אמא", "gift": 0}, {"id": 5, "name": "שגית סול", "phone": "547718374", "count": 1, "group": "משפחה שושנה אמא", "gift": 0}, {"id": 6, "name": "הילה ויונתן", "phone": "506215417", "count": 1, "group": "משפחה שושנה אמא", "gift": 0}, {"id": 7, "name": "רותי ודודי חגג", "phone": "525481122", "count": 1, "group": "משפחה שושנה אמא", "gift": 0}, {"id": 8, "name": "אייל גוילי", "phone": "547334113", "count": 1, "group": "משפחה שושנה אמא", "gift": 0}, {"id": 9, "name": "שולה ואבי יפרח", "phone": "523060400", "count": 2, "group": "משפחה שושנה אמא", "gift": 0}, {"id": 10, "name": "מירב וגילי עסיס", "phone": "526394412", "count": 1, "group": "משפחה שושנה אמא", "gift": 0}, {"id": 11, "name": "עירית וצורי לוי", "phone": "528301930", "count": 1, "group": "משפחה שושנה אמא", "gift": 0}, {"id": 12, "name": "צביה", "phone": "508731072", "count": 2, "group": "משפחה שושנה אמא", "gift": 0}, {"id": 13, "name": "רעות", "phone": "", "count": 1, "group": "משפחה שושנה אמא", "gift": 0}, {"id": 14, "name": "איתמר", "phone": "508731034", "count": 2, "group": "משפחה שושנה אמא", "gift": 0}, {"id": 15, "name": "יסמין", "phone": "584438700", "count": 1, "group": "משפחה שושנה אמא", "gift": 0}, {"id": 16, "name": "אפרת מורגנשטיין", "phone": "556670605", "count": 1, "group": "משפחה שושנה אמא", "gift": 0}, {"id": 17, "name": "מיטל", "phone": "544687361", "count": 1, "group": "משפחה שושנה אמא", "gift": 0}, {"id": 18, "name": "יוסקה חדד", "phone": "522627511", "count": 1, "group": "משפחה שושנה אמא", "gift": 0}, {"id": 19, "name": "איילת", "phone": "544930670", "count": 1, "group": "משפחה שושנה אמא", "gift": 0}, {"id": 20, "name": "תמי גנון", "phone": "542947884", "count": 1, "group": "משפחה שושנה אמא", "gift": 0}, {"id": 21, "name": "אורה ואשר וקנין", "phone": "526876879", "count": 2, "group": "משפחה שושנה אמא", "gift": 0}, {"id": 22, "name": "שני", "phone": "522998033", "count": 1, "group": "משפחה שושנה אמא", "gift": 0}, {"id": 23, "name": "שניר", "phone": "507429690", "count": 1, "group": "משפחה שושנה אמא", "gift": 0}, {"id": 24, "name": "שיר", "phone": "523840410", "count": 1, "group": "משפחה שושנה אמא", "gift": 0}, {"id": 27, "name": "יהודית מדר", "phone": "548006896", "count": 1, "group": "משפחה דוד אבא", "gift": 0}, {"id": 28, "name": "אלי וחגית כהן", "phone": "502117019", "count": 5, "group": "משפחה דוד אבא", "gift": 0}, {"id": 29, "name": "נוי ונתי", "phone": "509117019", "count": 2, "group": "משפחה דוד אבא", "gift": 0}, {"id": 30, "name": "כוכי ובוסתן פרגון", "phone": "525582182", "count": 2, "group": "משפחה דוד אבא", "gift": 0}, {"id": 31, "name": "עמוס ואביגיל כהן", "phone": "502202225", "count": 2, "group": "משפחה דוד אבא", "gift": 0}, {"id": 32, "name": "מיכאל ורחל מדר", "phone": "508758623", "count": 2, "group": "משפחה דוד אבא", "gift": 0}, {"id": 33, "name": "רונית גהסי", "phone": "528012515", "count": 1, "group": "משפחה דוד אבא", "gift": 0}, {"id": 34, "name": "דניאל", "phone": "548001423", "count": 1, "group": "משפחה דוד אבא", "gift": 0}, {"id": 35, "name": "יפית", "phone": "508866300", "count": 1, "group": "משפחה דוד אבא", "gift": 0}, {"id": 36, "name": "אביאל", "phone": "546678971", "count": 1, "group": "משפחה דוד אבא", "gift": 0}, {"id": 37, "name": "נאור", "phone": "542244636", "count": 1, "group": "משפחה דוד אבא", "gift": 0}, {"id": 38, "name": "שושנה וציון ביתן", "phone": "509098711", "count": 1, "group": "משפחה דוד אבא", "gift": 0}, {"id": 39, "name": "עודד", "phone": "507888197", "count": 1, "group": "משפחה דוד אבא", "gift": 0}, {"id": 40, "name": "אמיר", "phone": "587720012", "count": 1, "group": "משפחה דוד אבא", "gift": 0}, {"id": 41, "name": "אסתר", "phone": "528652671", "count": 1, "group": "משפחה דוד אבא", "gift": 0}, {"id": 42, "name": "אריאל שופן", "phone": "בטוח מגיעים", "count": 1, "group": "משפחה דוד אבא", "gift": 0}, {"id": 43, "name": "רבקה סעדון", "phone": "507888773", "count": 1, "group": "משפחה דוד אבא", "gift": 0}, {"id": 44, "name": "טל גורנו", "phone": "522748313", "count": 1, "group": "משפחה דוד אבא", "gift": 0}, {"id": 45, "name": "נאווה ושמעון גורנו", "phone": "524440876", "count": 1, "group": "משפחה דוד אבא", "gift": 0}, {"id": 46, "name": "חי גורנו", "phone": "526977121", "count": 1, "group": "משפחה דוד אבא", "gift": 0}, {"id": 47, "name": "שמחה גורנו", "phone": "522392088", "count": 1, "group": "משפחה דוד אבא", "gift": 0}, {"id": 48, "name": "שמוליק", "phone": "545867998", "count": 1, "group": "משפחה דוד אבא", "gift": 0}, {"id": 49, "name": "חן  ג'ורנו", "phone": "528277389", "count": 1, "group": "משפחה דוד אבא", "gift": 0}, {"id": 50, "name": "ישראל ויוהנה", "phone": "507444167", "count": 2, "group": "משפחה דוד אבא", "gift": 0}, {"id": 51, "name": "אפרת ובועז איבגי", "phone": "524476554", "count": 2, "group": "משפחה דוד אבא", "gift": 0}, {"id": 52, "name": "בתשבע ויואב", "phone": "502555221", "count": 2, "group": "משפחה דוד אבא", "gift": 0}, {"id": 53, "name": "אהרון ולאה מדר", "phone": "524012229", "count": 2, "group": "משפחה דוד אבא", "gift": 0}, {"id": 54, "name": "עידו סעד", "phone": "539336631", "count": 1, "group": "משפחה דוד אבא", "gift": 0}, {"id": 55, "name": "לאה כהן", "phone": "584433559", "count": 1, "group": "משפחה דוד אבא", "gift": 0}, {"id": 56, "name": "אסף", "phone": "504112287", "count": 1, "group": "משפחה דוד אבא", "gift": 0}, {"id": 57, "name": "עמוס ורחל מדר", "phone": "506350050", "count": 2, "group": "משפחה דוד אבא", "gift": 0}, {"id": 58, "name": "ניר מדר", "phone": "506591488", "count": 1, "group": "משפחה דוד אבא", "gift": 0}, {"id": 59, "name": "רן מדר", "phone": "507877112", "count": 1, "group": "משפחה דוד אבא", "gift": 0}, {"id": 60, "name": "חן", "phone": "506313182", "count": 1, "group": "משפחה דוד אבא", "gift": 0}, {"id": 61, "name": "כרמית בנאדו", "phone": "508788443", "count": 1, "group": "משפחה דוד אבא", "gift": 0}, {"id": 64, "name": "אביחי כהן", "phone": "50-768-7576", "count": 1, "group": "חברים יואל", "gift": 0}, {"id": 65, "name": "אביתר כהן", "phone": "50-858-2578", "count": 1, "group": "חברים יואל", "gift": 0}, {"id": 66, "name": "אביתר כהן יהונתן", "phone": "50-268-7654", "count": 1, "group": "חברים יואל", "gift": 0}, {"id": 67, "name": "גולן חדד", "phone": "546649541", "count": 2, "group": "חברים יואל", "gift": 0}, {"id": 68, "name": "אביה שמילה", "phone": "545994358", "count": 2, "group": "חברים יואל", "gift": 0}, {"id": 69, "name": "חיים חדד", "phone": "542849891", "count": 1, "group": "חברים יואל", "gift": 0}, {"id": 70, "name": "רותם עזיז", "phone": "502765360", "count": 1, "group": "חברים יואל", "gift": 0}, {"id": 71, "name": "יובל ויזל", "phone": "545836005", "count": 1, "group": "חברים יואל", "gift": 0}, {"id": 72, "name": "אביחי חזן", "phone": "544654387", "count": 1, "group": "חברים יואל", "gift": 0}, {"id": 73, "name": "יוני כהן", "phone": "528109625", "count": 2, "group": "חברים יואל", "gift": 0}, {"id": 75, "name": "פנחס ורותי חדד", "phone": "506733960", "count": 1, "group": "מושב", "gift": 0}, {"id": 76, "name": "רחל ואפרים חדד", "phone": "549146989", "count": 1, "group": "מושב", "gift": 0}, {"id": 77, "name": "עדנה ואבנר סגרון", "phone": "549703326", "count": 2, "group": "מושב", "gift": 0}, {"id": 78, "name": "שלומי וניצה גז", "phone": "524309855", "count": 2, "group": "מושב", "gift": 0}, {"id": 79, "name": "אייל ואירן סולומון", "phone": "527201171", "count": 1, "group": "מושב", "gift": 0}, {"id": 80, "name": "צביקה ומוריה כהן", "phone": "502022270", "count": 1, "group": "מושב", "gift": 0}, {"id": 81, "name": "מיכאל כהן", "phone": "507217999", "count": 1, "group": "מושב", "gift": 0}, {"id": 82, "name": "דוד סעדון", "phone": "507304140", "count": 1, "group": "מושב", "gift": 0}, {"id": 83, "name": "אופיר איובי", "phone": "542255960", "count": 1, "group": "מושב", "gift": 0}, {"id": 84, "name": "אבי כהן", "phone": "537177231", "count": 1, "group": "מושב", "gift": 0}, {"id": 85, "name": "משה יאנה", "phone": "", "count": 1, "group": "מושב", "gift": 0}, {"id": 86, "name": "רפי וזהבה פרץ", "phone": "528223990", "count": 1, "group": "מושב", "gift": 0}, {"id": 87, "name": "צביקה ורבקה חדד", "phone": "526811200", "count": 2, "group": "מושב", "gift": 0}, {"id": 88, "name": "אפרים פיניש", "phone": "526025441", "count": 1, "group": "מושב", "gift": 0}, {"id": 89, "name": "שמעון ושושנה כהן", "phone": "522886436", "count": 1, "group": "מושב", "gift": 0}, {"id": 90, "name": "אבי סעדון", "phone": "505740644", "count": 2, "group": "מושב", "gift": 0}, {"id": 91, "name": "מאיר כהן", "phone": "505407390", "count": 1, "group": "מושב", "gift": 0}, {"id": 92, "name": "חיו כהן", "phone": "537273904", "count": 1, "group": "מושב", "gift": 0}, {"id": 93, "name": "הדס ברון", "phone": "528735963", "count": 1, "group": "מושב", "gift": 0}, {"id": 94, "name": "גולן פרגון", "phone": "523961118", "count": 1, "group": "מושב", "gift": 0}, {"id": 96, "name": "אסיף ומעיין", "phone": "בטוח מגיעים", "count": 2, "group": "משפחה קרובה-יואל", "gift": 0}, {"id": 97, "name": "מור וערן", "phone": "בטוח מגיעים", "count": 4, "group": "משפחה קרובה-יואל", "gift": 0}, {"id": 98, "name": "חי ואתי", "phone": "בטוח מגיעים", "count": 4, "group": "משפחה קרובה-יואל", "gift": 0}, {"id": 99, "name": "מזל ויוחאי", "phone": "בטוח מגיעים", "count": 2, "group": "משפחה קרובה-יואל", "gift": 0}, {"id": 100, "name": "אבא ואמא", "phone": "בטוח מגיעים", "count": 2, "group": "משפחה קרובה-יואל", "gift": 0}, {"id": 101, "name": "שולה ואבי", "phone": "בטוח מגיעים", "count": 2, "group": "משפחה קרובה-יואל", "gift": 0}, {"id": 102, "name": "ישראל שופן", "phone": "בטוח מגיעים", "count": 1, "group": "משפחה קרובה-יואל", "gift": 0}, {"id": 103, "name": "ההורים של מעיין", "phone": "בטוח מגיעים", "count": 2, "group": "משפחה קרובה-יואל", "gift": 0}, {"id": 106, "name": "רוטשילד", "phone": "532784897", "count": 1, "group": "חברים-דוד מדר", "gift": 0}, {"id": 107, "name": "דוד חבד", "phone": "526343634", "count": 1, "group": "חברים-דוד מדר", "gift": 0}, {"id": 108, "name": "נעמי מלול", "phone": "508165776", "count": 1, "group": "חברים-דוד מדר", "gift": 0}, {"id": 109, "name": "נגה", "phone": "בטוח מגיעים", "count": 1, "group": "חברים-דוד מדר", "gift": 0}, {"id": 110, "name": "מיכאל נחמני", "phone": "בטוח מגיעים", "count": 1, "group": "חברים-דוד מדר", "gift": 0}, {"id": 111, "name": "סימון ביסו", "phone": "בטוח מגיעים", "count": 2, "group": "חברים-דוד מדר", "gift": 0}, {"id": 113, "name": "שחף מטולה", "phone": "543368863", "count": 1, "group": "בני דודים שכנראה לא יגיעו", "gift": 0}, {"id": 114, "name": "דרור מטולה", "phone": "542252360", "count": 1, "group": "בני דודים שכנראה לא יגיעו", "gift": 0}, {"id": 115, "name": "אדי מטולה", "phone": "507058839", "count": 1, "group": "בני דודים שכנראה לא יגיעו", "gift": 0}, {"id": 116, "name": "יהודה יפרח", "phone": "503677597", "count": 1, "group": "בני דודים שכנראה לא יגיעו", "gift": 0}, {"id": 117, "name": "שי  וקנין", "phone": "548089359", "count": 1, "group": "בני דודים שכנראה לא יגיעו", "gift": 0}, {"id": 118, "name": "ענת כהן", "phone": "507424879", "count": 1, "group": "בני דודים שכנראה לא יגיעו", "gift": 0}, {"id": 119, "name": "קרן הבת של שושנה", "phone": "504062331", "count": 1, "group": "בני דודים שכנראה לא יגיעו", "gift": 0}, {"id": 120, "name": "לירון סעדון כהן", "phone": "507892094", "count": 1, "group": "בני דודים שכנראה לא יגיעו", "gift": 0}, {"id": 121, "name": "ארז סעדון", "phone": "506478227", "count": 1, "group": "בני דודים שכנראה לא יגיעו", "gift": 0}, {"id": 122, "name": "עומר סעדון", "phone": "503621543", "count": 1, "group": "בני דודים שכנראה לא יגיעו", "gift": 0}, {"id": 123, "name": "זהר", "phone": "546745307", "count": 1, "group": "בני דודים שכנראה לא יגיעו", "gift": 0}, {"id": 124, "name": "מאיר מדר", "phone": "546640245", "count": 1, "group": "בני דודים שכנראה לא יגיעו", "gift": 0}, {"id": 128, "name": "סבתא רחל", "phone": "בטוח מגיעים", "count": 1, "group": "משפחה אבא עופר", "gift": 0}, {"id": 129, "name": "מוטי וברו זגורי (ניתאי)", "phone": "508889010", "count": 3, "group": "משפחה אבא עופר", "gift": 0}, {"id": 130, "name": "עדי זגורי", "phone": "507544017", "count": 1, "group": "משפחה אבא עופר", "gift": 0}, {"id": 131, "name": "טליה ויוסי זיגמון", "phone": "507576986", "count": 2, "group": "משפחה אבא עופר", "gift": 0}, {"id": 132, "name": "רחלי ודניאל", "phone": "506501792", "count": 2, "group": "משפחה אבא עופר", "gift": 0}, {"id": 133, "name": "לינוי ונתי אלפסי", "phone": "507576953", "count": 2, "group": "משפחה אבא עופר", "gift": 0}, {"id": 134, "name": "שמעון ואופיר", "phone": "502090075", "count": 2, "group": "משפחה אבא עופר", "gift": 0}, {"id": 135, "name": "יוסף זגורי", "phone": "502090097", "count": 1, "group": "משפחה אבא עופר", "gift": 0}, {"id": 136, "name": "אביבה ומשה ביטון", "phone": "526603312", "count": 2, "group": "משפחה אבא עופר", "gift": 0}, {"id": 137, "name": "רועית ונתי חדד", "phone": "528716057", "count": 1, "group": "משפחה אבא עופר", "gift": 0}, {"id": 138, "name": "אוראל ביטון", "phone": "528913249", "count": 1, "group": "משפחה אבא עופר", "gift": 0}, {"id": 139, "name": "נטע בן דוד", "phone": "524442428", "count": 1, "group": "משפחה אבא עופר", "gift": 0}, {"id": 140, "name": "טוהר ואדיר", "phone": "526603315", "count": 2, "group": "משפחה אבא עופר", "gift": 0}, {"id": 141, "name": "עידו", "phone": "526443122", "count": 1, "group": "משפחה אבא עופר", "gift": 0}, {"id": 142, "name": "ירין ושחף", "phone": "526603314", "count": 1, "group": "משפחה אבא עופר", "gift": 0}, {"id": 143, "name": "יהודה ומרים זגורי", "phone": "546702440", "count": 2, "group": "משפחה אבא עופר", "gift": 0}, {"id": 144, "name": "ליאל ויקיר", "phone": "502757464", "count": 1, "group": "משפחה אבא עופר", "gift": 0}, {"id": 145, "name": "שנהב ושי אוחיון", "phone": "502449025", "count": 1, "group": "משפחה אבא עופר", "gift": 0}, {"id": 146, "name": "אבידן", "phone": "503094656", "count": 1, "group": "משפחה אבא עופר", "gift": 0}, {"id": 147, "name": "עדן ועמית קלימי", "phone": "502151513", "count": 2, "group": "משפחה אבא עופר", "gift": 0}, {"id": 148, "name": "רוית ואיתי", "phone": "542502082", "count": 2, "group": "משפחה אבא עופר", "gift": 0}, {"id": 149, "name": "אילון", "phone": "506947844", "count": 1, "group": "משפחה אבא עופר", "gift": 0}, {"id": 150, "name": "בת שבע מויאל", "phone": "543966630", "count": 1, "group": "משפחה אבא עופר", "gift": 0}, {"id": 151, "name": "נווה וצליל מויאל", "phone": "543966631", "count": 2, "group": "משפחה אבא עופר", "gift": 0}, {"id": 152, "name": "סתיו ואלמה מויאל", "phone": "543966620", "count": 2, "group": "משפחה אבא עופר", "gift": 0}, {"id": 153, "name": "שלו ומוריה מויאל", "phone": "543966621", "count": 2, "group": "משפחה אבא עופר", "gift": 0}, {"id": 154, "name": "קיקו זגורי, רון  הלל וגיל", "phone": "507220024", "count": 4, "group": "משפחה אבא עופר", "gift": 0}, {"id": 155, "name": "שיר זגורי וירין", "phone": "509199661", "count": 2, "group": "משפחה אבא עופר", "gift": 0}, {"id": 156, "name": "חיים ונחמה פרץ", "phone": "505231164", "count": 2, "group": "משפחה אבא עופר", "gift": 0}, {"id": 157, "name": "אלעד ושירי פרץ", "phone": "508111118", "count": 2, "group": "משפחה אבא עופר", "gift": 0}, {"id": 158, "name": "משה וגילה פרץ", "phone": "506276600", "count": 1, "group": "משפחה אבא עופר", "gift": 0}, {"id": 159, "name": "מזל ונחמיה אורן", "phone": "507641906", "count": 2, "group": "משפחה אבא עופר", "gift": 0}, {"id": 160, "name": "לירון יצחקי", "phone": "503073046", "count": 1, "group": "משפחה אבא עופר", "gift": 0}, {"id": 161, "name": "פאני פרץ", "phone": "548331419", "count": 1, "group": "משפחה אבא עופר", "gift": 0}, {"id": 162, "name": "משה פרץ", "phone": "502582587", "count": 1, "group": "משפחה אבא עופר", "gift": 0}, {"id": 163, "name": "יסכה ואסף ברוכי", "phone": "505935647", "count": 2, "group": "משפחה אבא עופר", "gift": 0}, {"id": 164, "name": "יוסי פרץ", "phone": "505887755", "count": 1, "group": "משפחה אבא עופר", "gift": 0}, {"id": 165, "name": "עופרה ורמי סברי", "phone": "502444938", "count": 2, "group": "משפחה אבא עופר", "gift": 0}, {"id": 166, "name": "בני פרץ", "phone": "5022222226", "count": 1, "group": "משפחה אבא עופר", "gift": 0}, {"id": 167, "name": "דורון פרץ תל אביב", "phone": "528947777", "count": 1, "group": "משפחה אבא עופר", "gift": 0}, {"id": 168, "name": "עליזה נאמן", "phone": "535546922", "count": 2, "group": "משפחה אבא עופר", "gift": 0}, {"id": 169, "name": "יוסי ושירה סויסה", "phone": "548811111", "count": 1, "group": "משפחה אבא עופר", "gift": 0}, {"id": 170, "name": "ג'ימי פרץ", "phone": "538888823", "count": 1, "group": "משפחה אבא עופר", "gift": 0}, {"id": 171, "name": "דבורה ודוד פרץ", "phone": "547263612", "count": 1, "group": "משפחה אבא עופר", "gift": 0}, {"id": 172, "name": "דורון פרץ", "phone": "508137599", "count": 1, "group": "משפחה אבא עופר", "gift": 0}, {"id": 173, "name": "דינה וחיים גבאי", "phone": "505955671", "count": 2, "group": "משפחה אבא עופר", "gift": 0}, {"id": 174, "name": "מירי ובעלה", "phone": "533133435", "count": 1, "group": "משפחה אבא עופר", "gift": 0}, {"id": 175, "name": "שירה גבאי", "phone": "533129371", "count": 1, "group": "משפחה אבא עופר", "gift": 0}, {"id": 176, "name": "אשר וסימה זגורי", "phone": "547775944", "count": 2, "group": "משפחה אבא עופר", "gift": 0}, {"id": 177, "name": "אוהד זגורי", "phone": "506335275", "count": 1, "group": "משפחה אבא עופר", "gift": 0}, {"id": 178, "name": "שחר זגורי", "phone": "547775933", "count": 1, "group": "משפחה אבא עופר", "gift": 0}, {"id": 179, "name": "עופרה אברהם", "phone": "506691787", "count": 1, "group": "משפחה אבא עופר", "gift": 0}, {"id": 180, "name": "חיים כהן", "phone": "508674499", "count": 1, "group": "משפחה אבא עופר", "gift": 0}, {"id": 181, "name": "ניסים כהן", "phone": "524670669", "count": 1, "group": "משפחה אבא עופר", "gift": 0}, {"id": 182, "name": "ברוריה כהן", "phone": "502205745", "count": 1, "group": "משפחה אבא עופר", "gift": 0}, {"id": 183, "name": "מירב ואילן כהן", "phone": "526140980", "count": 1, "group": "משפחה אבא עופר", "gift": 0}, {"id": 184, "name": "כרמית זגורי גן יבנה", "phone": "504558559", "count": 1, "group": "משפחה אבא עופר", "gift": 0}, {"id": 185, "name": "שמחה טל", "phone": "528870828", "count": 1, "group": "משפחה אבא עופר", "gift": 0}, {"id": 186, "name": "מירב חדד", "phone": "532292233", "count": 1, "group": "משפחה אבא עופר", "gift": 0}, {"id": 187, "name": "מזל חזן", "phone": "523668763", "count": 1, "group": "משפחה אבא עופר", "gift": 0}, {"id": 189, "name": "סבתא שושנה ואבי", "phone": "בטוח מגיעים", "count": 2, "group": "משפחה אמא אילנית", "gift": 0}, {"id": 190, "name": "חן זריהן ובן זוגה", "phone": "547831466", "count": 2, "group": "משפחה אמא אילנית", "gift": 0}, {"id": 191, "name": "נורית כהן ושי", "phone": "506396162", "count": 2, "group": "משפחה אמא אילנית", "gift": 0}, {"id": 192, "name": "שלמה וריקי זריהן", "phone": "544258977", "count": 2, "group": "משפחה אמא אילנית", "gift": 0}, {"id": 193, "name": "סוזי ואבי טקסירא", "phone": "525806668", "count": 2, "group": "משפחה אמא אילנית", "gift": 0}, {"id": 194, "name": "ירין זריהן", "phone": "559242110", "count": 2, "group": "משפחה אמא אילנית", "gift": 0}, {"id": 195, "name": "נוי זריהן", "phone": "547185732", "count": 1, "group": "משפחה אמא אילנית", "gift": 0}, {"id": 196, "name": "בן והודיה זריהן", "phone": "538230036", "count": 2, "group": "משפחה אמא אילנית", "gift": 0}, {"id": 197, "name": "אסתר ודני", "phone": "584180786", "count": 2, "group": "משפחה אמא אילנית", "gift": 0}, {"id": 198, "name": "הראל אבוטבול", "phone": "543514305", "count": 1, "group": "משפחה אמא אילנית", "gift": 0}, {"id": 199, "name": "נאור אבוטבול", "phone": "556650561", "count": 1, "group": "משפחה אמא אילנית", "gift": 0}, {"id": 200, "name": "אושר אבוטבול", "phone": "542689037", "count": 1, "group": "משפחה אמא אילנית", "gift": 0}, {"id": 201, "name": "זהבה מנזון", "phone": "545530354", "count": 1, "group": "משפחה אמא אילנית", "gift": 0}, {"id": 202, "name": "נינה וצ'יקו מנזון", "phone": "508684668", "count": 2, "group": "משפחה אמא אילנית", "gift": 0}, {"id": 203, "name": "דורון מנזון", "phone": "504509545", "count": 1, "group": "משפחה אמא אילנית", "gift": 0}, {"id": 204, "name": "עדן מנזון", "phone": "502700048", "count": 1, "group": "משפחה אמא אילנית", "gift": 0}, {"id": 205, "name": "אריק מנזון", "phone": "504700044", "count": 1, "group": "משפחה אמא אילנית", "gift": 0}, {"id": 206, "name": "רועי מנזון", "phone": "509720222", "count": 1, "group": "משפחה אמא אילנית", "gift": 0}, {"id": 207, "name": "יפה ויוסי ביטון ואליה", "phone": "523541929", "count": 2, "group": "משפחה אמא אילנית", "gift": 0}, {"id": 208, "name": "אליה ביטון", "phone": "506797410", "count": 1, "group": "משפחה אמא אילנית", "gift": 0}, {"id": 209, "name": "סיוון ונדב זגורי", "phone": "525109246", "count": 4, "group": "משפחה אמא אילנית", "gift": 0}, {"id": 210, "name": "אבישי ואליה ביטון", "phone": "538209311", "count": 1, "group": "משפחה אמא אילנית", "gift": 0}, {"id": 211, "name": "מאור ביטון", "phone": "524587792", "count": 1, "group": "משפחה אמא אילנית", "gift": 0}, {"id": 212, "name": "שוהם ורון", "phone": "503460835", "count": 2, "group": "משפחה אמא אילנית", "gift": 0}, {"id": 213, "name": "דורית ושלום איפרח", "phone": "537401979", "count": 2, "group": "משפחה אמא אילנית", "gift": 0}, {"id": 214, "name": "מור וזוהר איפרח", "phone": "535354634", "count": 2, "group": "משפחה אמא אילנית", "gift": 0}, {"id": 215, "name": "אורטל איפרח", "phone": "509916886", "count": 1, "group": "משפחה אמא אילנית", "gift": 0}, {"id": 216, "name": "אלירן איפרח", "phone": "504627710", "count": 1, "group": "משפחה אמא אילנית", "gift": 0}, {"id": 217, "name": "דניאל איפרח", "phone": "546628645", "count": 1, "group": "משפחה אמא אילנית", "gift": 0}, {"id": 218, "name": "ימית ושאול ברקוביץ' והילדים", "phone": "547453020", "count": 5, "group": "משפחה אמא אילנית", "gift": 0}, {"id": 219, "name": "קוראל ובר פרידריך", "phone": "522268892", "count": 2, "group": "משפחה אמא אילנית", "gift": 0}, {"id": 220, "name": "אורי ושאל כושנגי", "phone": "522255481", "count": 2, "group": "משפחה אמא אילנית", "gift": 0}, {"id": 221, "name": "שקד ברקוביץ", "phone": "528900559", "count": 1, "group": "משפחה אמא אילנית", "gift": 0}, {"id": 222, "name": "נועם ברקוביץ", "phone": "523850833", "count": 1, "group": "משפחה אמא אילנית", "gift": 0}, {"id": 223, "name": "אבי שוקרון", "phone": "505915718", "count": 1, "group": "משפחה אמא אילנית", "gift": 0}, {"id": 225, "name": "משי ויסמין", "phone": "בטוח מגיעים", "count": 2, "group": "משפחה מצומצמת תאיר", "gift": 0}, {"id": 226, "name": "שביט והוד", "phone": "בטוח מגיעים", "count": 2, "group": "משפחה מצומצמת תאיר", "gift": 0}, {"id": 227, "name": "אבא ואמא, נויה ויהלי", "phone": "בטוח מגיעים", "count": 4, "group": "משפחה מצומצמת תאיר", "gift": 0}, {"id": 230, "name": "דביר ואלומה", "phone": "543333379", "count": 2, "group": "חברים של ההורים אילנית ועופר", "gift": 0}, {"id": 231, "name": "עופר פחימה", "phone": "528722546", "count": 1, "group": "חברים של ההורים אילנית ועופר", "gift": 0}, {"id": 232, "name": "יהודה ושרית לוי", "phone": "547775858", "count": 2, "group": "חברים של ההורים אילנית ועופר", "gift": 0}, {"id": 233, "name": "אוראל ושיר לוי", "phone": "547775857", "count": 1, "group": "חברים של ההורים אילנית ועופר", "gift": 0}, {"id": 234, "name": "קסם לוי", "phone": "", "count": 1, "group": "חברים של ההורים אילנית ועופר", "gift": 0}, {"id": 235, "name": "אפיק לוי", "phone": "", "count": 1, "group": "חברים של ההורים אילנית ועופר", "gift": 0}, {"id": 236, "name": "נויה שיראל לוי", "phone": "502411958", "count": 1, "group": "חברים של ההורים אילנית ועופר", "gift": 0}, {"id": 237, "name": "ספיר כהן (הבת של שרית)", "phone": "542890220", "count": 1, "group": "חברים של ההורים אילנית ועופר", "gift": 0}, {"id": 238, "name": "שלומי ודנה זוהר", "phone": "542452354", "count": 2, "group": "חברים של ההורים אילנית ועופר", "gift": 0}, {"id": 239, "name": "עינב פרץ", "phone": "527585701", "count": 2, "group": "חברים של ההורים אילנית ועופר", "gift": 0}, {"id": 240, "name": "אילנית ומשה שוחט", "phone": "502347774", "count": 2, "group": "חברים של ההורים אילנית ועופר", "gift": 0}, {"id": 241, "name": "תאיר ועמיחי סופר", "phone": "507333576", "count": 1, "group": "חברים של ההורים אילנית ועופר", "gift": 0}, {"id": 242, "name": "יניב כלפה", "phone": "545228205", "count": 1, "group": "חברים של ההורים אילנית ועופר", "gift": 0}, {"id": 243, "name": "ליטל ומאור סויסה", "phone": "505862470", "count": 1, "group": "חברים של ההורים אילנית ועופר", "gift": 0}, {"id": 244, "name": "ליבית אלון", "phone": "549943398", "count": 2, "group": "חברים של ההורים אילנית ועופר", "gift": 0}, {"id": 245, "name": "עמית אלפסי ובעלה", "phone": "542679023", "count": 1, "group": "חברים של ההורים אילנית ועופר", "gift": 0}, {"id": 246, "name": "ליאם כהן", "phone": "547197501", "count": 1, "group": "חברים של ההורים אילנית ועופר", "gift": 0}, {"id": 247, "name": "עליזה דימונה", "phone": "528085174", "count": 1, "group": "חברים של ההורים אילנית ועופר", "gift": 0}, {"id": 248, "name": "שרית ששון", "phone": "549932262", "count": 1, "group": "חברים של ההורים אילנית ועופר", "gift": 0}, {"id": 249, "name": "גילה וגולן לוי", "phone": "508955538", "count": 1, "group": "חברים של ההורים אילנית ועופר", "gift": 0}, {"id": 250, "name": "קרין שטרית", "phone": "556655554", "count": 1, "group": "חברים של ההורים אילנית ועופר", "gift": 0}, {"id": 251, "name": "אורן שריקי", "phone": "505291788", "count": 1, "group": "חברים של ההורים אילנית ועופר", "gift": 0}, {"id": 252, "name": "ארז שריקי", "phone": "508889000", "count": 1, "group": "חברים של ההורים אילנית ועופר", "gift": 0}, {"id": 253, "name": "חי שריקי", "phone": "547552552", "count": 1, "group": "חברים של ההורים אילנית ועופר", "gift": 0}, {"id": 254, "name": "עודד שריקי", "phone": "509030333", "count": 1, "group": "חברים של ההורים אילנית ועופר", "gift": 0}, {"id": 255, "name": "ערן ושירן עבדיאן", "phone": "508889002", "count": 1, "group": "חברים של ההורים אילנית ועופר", "gift": 0}, {"id": 256, "name": "מיכל שריקי", "phone": "547350750", "count": 1, "group": "חברים של ההורים אילנית ועופר", "gift": 0}, {"id": 257, "name": "ויקי בית חולים", "phone": "545499999", "count": 1, "group": "חברים של ההורים אילנית ועופר", "gift": 0}, {"id": 258, "name": "סיגל משה", "phone": "522880550", "count": 1, "group": "חברים של ההורים אילנית ועופר", "gift": 0}, {"id": 259, "name": "קרן ומנחם עמר", "phone": "524858160", "count": 1, "group": "חברים של ההורים אילנית ועופר", "gift": 0}, {"id": 260, "name": "שרון וסקר", "phone": "547691797", "count": 1, "group": "חברים של ההורים אילנית ועופר", "gift": 0}, {"id": 261, "name": "אביבית ודודו כהן", "phone": "549277720", "count": 2, "group": "חברים של ההורים אילנית ועופר", "gift": 0}, {"id": 262, "name": "אבי ולימור פוריאן", "phone": "547739030", "count": 2, "group": "חברים של ההורים אילנית ועופר", "gift": 0}, {"id": 263, "name": "רועי פוריאן", "phone": "545657507", "count": 1, "group": "חברים של ההורים אילנית ועופר", "gift": 0}, {"id": 264, "name": "חני ואבנר שטרית", "phone": "535555171", "count": 2, "group": "חברים של ההורים אילנית ועופר", "gift": 0}, {"id": 265, "name": "שלי באר שבע", "phone": "506890675", "count": 1, "group": "חברים של ההורים אילנית ועופר", "gift": 0}, {"id": 266, "name": "ריקי מדר", "phone": "549737572", "count": 1, "group": "חברים של ההורים אילנית ועופר", "gift": 0}, {"id": 267, "name": "רחלי פרץ", "phone": "507737132", "count": 1, "group": "חברים של ההורים אילנית ועופר", "gift": 0}, {"id": 268, "name": "רגב דמרי", "phone": "503131753", "count": 1, "group": "חברים של ההורים אילנית ועופר", "gift": 0}, {"id": 269, "name": "ענת ואלי חדד", "phone": "537384865", "count": 2, "group": "חברים של ההורים אילנית ועופר", "gift": 0}, {"id": 270, "name": "מיקי סויסה", "phone": "546233599", "count": 1, "group": "חברים של ההורים אילנית ועופר", "gift": 0}, {"id": 271, "name": "אמיר ועדיאל ועקנין", "phone": "532193599", "count": 2, "group": "חברים של ההורים אילנית ועופר", "gift": 0}, {"id": 272, "name": "מוטי מדינה", "phone": "505887181", "count": 1, "group": "חברים של ההורים אילנית ועופר", "gift": 0}, {"id": 273, "name": "מיכה וסיגל מדינה", "phone": "545240064", "count": 2, "group": "חברים של ההורים אילנית ועופר", "gift": 0}, {"id": 274, "name": "כרמית זגורי", "phone": "504652200", "count": 1, "group": "חברים של ההורים אילנית ועופר", "gift": 0}, {"id": 275, "name": "מעיין פחימה", "phone": "542250999", "count": 1, "group": "חברים של ההורים אילנית ועופר", "gift": 0}, {"id": 276, "name": "אבי פחימה (אח של עופר)", "phone": "528722544", "count": 1, "group": "חברים של ההורים אילנית ועופר", "gift": 0}, {"id": 277, "name": "ישראל לוגסי", "phone": "545505349", "count": 1, "group": "חברים של ההורים אילנית ועופר", "gift": 0}, {"id": 278, "name": "רעות כהן", "phone": "502222239", "count": 1, "group": "חברים של ההורים אילנית ועופר", "gift": 0}, {"id": 279, "name": "הרצל ואוסנת לוי", "phone": "523297411", "count": 2, "group": "חברים של ההורים אילנית ועופר", "gift": 0}, {"id": 280, "name": "טלי ושמוליק אמיר", "phone": "505454010", "count": 2, "group": "חברים של ההורים אילנית ועופר", "gift": 0}, {"id": 281, "name": "מרינה ומיכאל", "phone": "546499605", "count": 2, "group": "חברים של ההורים אילנית ועופר", "gift": 0}, {"id": 282, "name": "אודליה וניסים שריקי", "phone": "504234200", "count": 2, "group": "חברים של ההורים אילנית ועופר", "gift": 0}, {"id": 283, "name": "חיים חזן", "phone": "523886640", "count": 1, "group": "חברים של ההורים אילנית ועופר", "gift": 0}, {"id": 284, "name": "עמי טובול", "phone": "544980258", "count": 1, "group": "חברים של ההורים אילנית ועופר", "gift": 0}, {"id": 285, "name": "ציון אוזן", "phone": "544385767", "count": 1, "group": "חברים של ההורים אילנית ועופר", "gift": 0}, {"id": 286, "name": "ירון אזרד", "phone": "506230758", "count": 1, "group": "חברים של ההורים אילנית ועופר", "gift": 0}, {"id": 287, "name": "אורטל איפרח", "phone": "509916886", "count": 1, "group": "חברים של ההורים אילנית ועופר", "gift": 0}, {"id": 288, "name": "רחל ברכה כהן", "phone": "546653231", "count": 1, "group": "חברים של ההורים אילנית ועופר", "gift": 0}, {"id": 289, "name": "נטלי סאקס", "phone": "543283286", "count": 1, "group": "חברים של ההורים  אילנית ועופר", "gift": 0}, {"id": 291, "name": "כרמית ומיכאל אלמסי", "phone": "533343762", "count": 2, "group": "שכנים-תאיר", "gift": 0}, {"id": 292, "name": "משה ומיכל אבוקסיס", "phone": "504701500", "count": 2, "group": "שכנים-תאיר", "gift": 0}, {"id": 293, "name": "ננסי ואלעזר בן דוד", "phone": "542510899", "count": 2, "group": "שכנים-תאיר", "gift": 0}, {"id": 294, "name": "הילה ואביב אפרים", "phone": "542070180", "count": 2, "group": "שכנים-תאיר", "gift": 0}, {"id": 295, "name": "ענבל לוי", "phone": "508810842", "count": 1, "group": "שכנים-תאיר", "gift": 0}, {"id": 296, "name": "טירן ואוסנת להב", "phone": "507540216", "count": 2, "group": "שכנים-תאיר", "gift": 0}, {"id": 297, "name": "שרון לוגסי", "phone": "522913000", "count": 1, "group": "שכנים-תאיר", "gift": 0}, {"id": 299, "name": "נאיף", "phone": "508558552", "count": 1, "group": "עבודה-עופר", "gift": 0}, {"id": 300, "name": "רובי יצחקי", "phone": "584030816", "count": 1, "group": "עבודה-עופר", "gift": 0}, {"id": 301, "name": "זיו שי", "phone": "508887952", "count": 1, "group": "עבודה-עופר", "gift": 0}, {"id": 302, "name": "מרדכי חזיזה", "phone": "509555044", "count": 1, "group": "עבודה-עופר", "gift": 0}, {"id": 305, "name": "עדן ואלירן אוחיון", "phone": "526255599", "count": 2, "group": "חברים ומכרים תאיר", "gift": 0}, {"id": 306, "name": "שריאל", "phone": "508180660", "count": 1, "group": "חברים ומכרים תאיר", "gift": 0}, {"id": 307, "name": "ורד וגשאו איילנך", "phone": "524380232", "count": 2, "group": "חברים ומכרים תאיר", "gift": 0}, {"id": 308, "name": "לינוי ונדב דהן", "phone": "503456043", "count": 2, "group": "חברים ומכרים תאיר", "gift": 0}, {"id": 309, "name": "מזל סיבהט", "phone": "556645549", "count": 1, "group": "חברים ומכרים תאיר", "gift": 0}, {"id": 310, "name": "אסתר ברוך", "phone": "542981433", "count": 1, "group": "חברים ומכרים תאיר", "gift": 0}, {"id": 311, "name": "אביבה באלאטה", "phone": "523248482", "count": 1, "group": "חברים ומכרים תאיר", "gift": 0}, {"id": 312, "name": "אבלין ופרננדו ויסמן", "phone": "523893535", "count": 2, "group": "חברים ומכרים תאיר", "gift": 0}, {"id": 313, "name": "איריס הראל", "phone": "542035500", "count": 1, "group": "חברים ומכרים תאיר", "gift": 0}, {"id": 314, "name": "שושי בוסקילה", "phone": "527952443", "count": 1, "group": "חברים ומכרים תאיר", "gift": 0}, {"id": 315, "name": "סטייסי ואייל עמר", "phone": "545649835", "count": 2, "group": "חברים ומכרים תאיר", "gift": 0}, {"id": 320, "name": "בת חן כהן", "phone": "587463723", "count": 1, "group": "תאיר מבועים", "gift": 0}, {"id": 321, "name": "אפרת קוכמן", "phone": "505313337", "count": 1, "group": "תאיר מבועים", "gift": 0}, {"id": 322, "name": "יפית סלמי", "phone": "523200337", "count": 1, "group": "תאיר מבועים", "gift": 0}, {"id": 323, "name": "מאיה חניה", "phone": "528830911", "count": 1, "group": "תאיר מבועים", "gift": 0}, {"id": 324, "name": "אודליה חכימי", "phone": "584211180", "count": 1, "group": "תאיר מבועים", "gift": 0}, {"id": 325, "name": "שרי סבג", "phone": "547405122", "count": 1, "group": "תאיר מבועים", "gift": 0}, {"id": 326, "name": "חלי אדר", "phone": "508845476", "count": 1, "group": "תאיר מבועים", "gift": 0}, {"id": 327, "name": "אתי כהן", "phone": "544926416", "count": 1, "group": "תאיר מבועים", "gift": 0}, {"id": 328, "name": "מירב יונה", "phone": "507218059", "count": 1, "group": "תאיר מבועים", "gift": 0}, {"id": 329, "name": "דניאלה יצחק חי", "phone": "549417779", "count": 1, "group": "תאיר מבועים", "gift": 0}, {"id": 330, "name": "לאה פרג'", "phone": "523912341", "count": 1, "group": "תאיר מבועים", "gift": 0}, {"id": 331, "name": "שירן סבג", "phone": "548155080", "count": 1, "group": "תאיר מבועים", "gift": 0}, {"id": 332, "name": "ריקי בר", "phone": "544865122", "count": 1, "group": "תאיר מבועים", "gift": 0}, {"id": 333, "name": "עינת זארוק", "phone": "522760962", "count": 1, "group": "תאיר מבועים", "gift": 0}, {"id": 334, "name": "חופית סבג", "phone": "507749776", "count": 1, "group": "תאיר מבועים", "gift": 0}, {"id": 335, "name": "ליאור סופר", "phone": "509199566", "count": 1, "group": "תאיר מבועים", "gift": 0}, {"id": 336, "name": "זהבית חביב", "phone": "528285397", "count": 1, "group": "תאיר מבועים", "gift": 0}, {"id": 337, "name": "משי וקנין", "phone": "522820852", "count": 1, "group": "תאיר מבועים", "gift": 0}, {"id": 338, "name": "דבי רביזדה", "phone": "507431326", "count": 1, "group": "תאיר מבועים", "gift": 0}, {"id": 339, "name": "מירית", "phone": "527866679", "count": 1, "group": "תאיר מבועים", "gift": 0}, {"id": 340, "name": "עליזה טוסון", "phone": "544298434", "count": 1, "group": "תאיר מבועים", "gift": 0}, {"id": 341, "name": "ענבל נעים", "phone": "508589282", "count": 1, "group": "תאיר מבועים", "gift": 0}, {"id": 342, "name": "טלי עטיה", "phone": "508787289", "count": 1, "group": "תאיר מבועים", "gift": 0}, {"id": 343, "name": "עופרה אפרים", "phone": "532216519", "count": 1, "group": "תאיר מבועים", "gift": 0}, {"id": 344, "name": "מירי כרמי", "phone": "508331680", "count": 1, "group": "תאיר מבועים", "gift": 0}, {"id": 345, "name": "אודליה אביר", "phone": "526728305", "count": 1, "group": "תאיר עבודה", "gift": 0}, {"id": 346, "name": "אוהד כהן", "phone": "547612176", "count": 1, "group": "תאיר עבודה", "gift": 0}, {"id": 347, "name": "יפעת דותן", "phone": "542170744", "count": 1, "group": "תאיר עבודה", "gift": 0}, {"id": 348, "name": "לורן גנון", "phone": "524546901", "count": 1, "group": "תאיר עבודה", "gift": 0}, {"id": 349, "name": "ליטל חן", "phone": "506060676", "count": 1, "group": "תאיר עבודה", "gift": 0}, {"id": 350, "name": "מור גניס", "phone": "546729210", "count": 1, "group": "תאיר עבודה", "gift": 0}, {"id": 351, "name": "סימה לדאני", "phone": "526290891", "count": 1, "group": "תאיר עבודה", "gift": 0}, {"id": 352, "name": "ספיר גבאי", "phone": "528018823", "count": 1, "group": "תאיר עבודה", "gift": 0}, {"id": 353, "name": "רונית לוי", "phone": "544322800", "count": 1, "group": "תאיר עבודה", "gift": 0}, {"id": 354, "name": "רינת אליאס", "phone": "545268586", "count": 1, "group": "תאיר עבודה", "gift": 0}, {"id": 355, "name": "שיר פסי", "phone": "509009307", "count": 1, "group": "תאיר עבודה", "gift": 0}, {"id": 356, "name": "שיר רגב", "phone": "508479995", "count": 1, "group": "תאיר עבודה", "gift": 0}, {"id": 357, "name": "שרית אלבז", "phone": "507663068", "count": 1, "group": "תאיר עבודה", "gift": 0}, {"id": 358, "name": "ספיר כהן", "phone": "546621143", "count": 1, "group": "תאיר עבודה", "gift": 0}, {"id": 359, "name": "ענת שחר", "phone": "532845866", "count": 1, "group": "תאיר עבודה", "gift": 0}, {"id": 360, "name": "כרמית כהן", "phone": "585889821", "count": 1, "group": "תאיר עבודה", "gift": 0}, {"id": 361, "name": "חיים טל", "phone": "522444687", "count": 1, "group": "תאיר עבודה", "gift": 0}, {"id": 362, "name": "דנית דנה", "phone": "526080705", "count": 1, "group": "תאיר עבודה", "gift": 0}, {"id": 363, "name": "עדי קפאח", "phone": "506272389", "count": 1, "group": "תאיר עבודה", "gift": 0}, {"id": 364, "name": "בת חן דהן", "phone": "507904883", "count": 1, "group": "תאיר עבודה", "gift": 0}, {"id": 365, "name": "יפה מרגי", "phone": "508511620", "count": 1, "group": "תאיר עבודה", "gift": 0}, {"id": 366, "name": "ציונה", "phone": "505900315", "count": 1, "group": "תאיר עבודה", "gift": 0}, {"id": 367, "name": "דריה כהן", "phone": "542650450", "count": 1, "group": "תאיר עבודה", "gift": 0}, {"id": 368, "name": "הילה בשקירוב", "phone": "586699393", "count": 1, "group": "תאיר עבודה", "gift": 0}, {"id": 372, "name": "אליאור", "phone": "508538555", "count": 1, "group": "חברים משי", "gift": 0}, {"id": 373, "name": "אייל כהן", "phone": "544661520", "count": 1, "group": "חברים משי", "gift": 0}, {"id": 374, "name": "דניאל אלבז", "phone": "502173091", "count": 1, "group": "חברים משי", "gift": 0}, {"id": 375, "name": "אריאל", "phone": "542964824", "count": 1, "group": "חברים משי", "gift": 0}, {"id": 376, "name": "לירון סקזי", "phone": "509987575", "count": 1, "group": "חברים משי", "gift": 0}, {"id": 377, "name": "ליאב גרוסי", "phone": "542277718", "count": 1, "group": "חברים משי", "gift": 0}, {"id": 378, "name": "ירין קלימי", "phone": "543520633", "count": 1, "group": "חברים משי", "gift": 0}, {"id": 379, "name": "שילו", "phone": "526830390", "count": 1, "group": "חברים משי", "gift": 0}, {"id": 380, "name": "איתי עידן", "phone": "537248627", "count": 1, "group": "חברים משי", "gift": 0}, {"id": 381, "name": "יגל ישורון", "phone": "502821743", "count": 1, "group": "חברים משי", "gift": 0}, {"id": 382, "name": "אופיר", "phone": "547794799", "count": 1, "group": "חברים משי", "gift": 0}, {"id": 383, "name": "רון טויטו", "phone": "542252157", "count": 1, "group": "חברים משי", "gift": 0}, {"id": 384, "name": "טל כלימי", "phone": "547634001", "count": 1, "group": "חברים משי", "gift": 0}, {"id": 388, "name": "אופיר אברג'ל", "phone": "507646561", "count": 1, "group": "חברים שביט", "gift": 0}, {"id": 389, "name": "רון אבוקסיס", "phone": "504701502", "count": 1, "group": "חברים שביט", "gift": 0}, {"id": 390, "name": "שילת אבן חיים", "phone": "506587500", "count": 1, "group": "חברים שביט", "gift": 0}, {"id": 391, "name": "ליאם בלטי", "phone": "547594807", "count": 1, "group": "חברים שביט", "gift": 0}, {"id": 392, "name": "ספיר מונטין", "phone": "508188875", "count": 1, "group": "חברים שביט", "gift": 0}, {"id": 393, "name": "שיראל דוד", "phone": "542971299", "count": 1, "group": "חברים שביט", "gift": 0}];
 
+// ---- State ----
+let guests = []; // working copy: GUESTS_DATA + custom
+let gifts = {};       // id -> amount (₪)
+let arrived = {};     // id -> count arrived
+let guestEdits = {};  // id -> {name, phone, count, group} overrides
+let customGuests = []; // manually added guests
+let nextCustomId = 100000;
 let giftFilter = 'all';
-let gifts = {};
 
-function loadGifts() {
-  const saved = localStorage.getItem('wedding_gifts_v1');
-  if (saved) {
-    try { gifts = JSON.parse(saved); } catch(e) { gifts = {}; }
-  }
+// ---- Persistence ----
+function loadAll() {
+  try { gifts = JSON.parse(localStorage.getItem('wedding_gifts_v1') || '{}'); } catch(e) { gifts = {}; }
+  try { arrived = JSON.parse(localStorage.getItem('wedding_arrived_v1') || '{}'); } catch(e) { arrived = {}; }
+  try { guestEdits = JSON.parse(localStorage.getItem('wedding_edits_v1') || '{}'); } catch(e) { guestEdits = {}; }
+  try {
+    customGuests = JSON.parse(localStorage.getItem('wedding_custom_v1') || '[]');
+    if (customGuests.length) {
+      nextCustomId = Math.max(nextCustomId, ...customGuests.map(g => g.id + 1));
+    }
+  } catch(e) { customGuests = []; }
 }
 
-function saveGifts() {
+function saveAll() {
   localStorage.setItem('wedding_gifts_v1', JSON.stringify(gifts));
+  localStorage.setItem('wedding_arrived_v1', JSON.stringify(arrived));
+  localStorage.setItem('wedding_edits_v1', JSON.stringify(guestEdits));
+  localStorage.setItem('wedding_custom_v1', JSON.stringify(customGuests));
   updateStats();
 }
 
-function updateStats() {
-  const paid = Object.entries(gifts).filter(([k,v]) => v > 0);
-  const total = paid.reduce((s,[,v]) => s + Number(v), 0);
-  document.getElementById('totalAmount').textContent = '₪' + total.toLocaleString('he-IL');
-  document.getElementById('paidCount').textContent = paid.length;
-  document.getElementById('remainCount').textContent = GUESTS_DATA.length - paid.length;
+function buildGuests() {
+  // Base guests with edits applied
+  const base = GUESTS_DATA.map(g => {
+    const ed = guestEdits[g.id];
+    return ed ? {...g, ...ed} : {...g};
+  });
+  guests = [...base, ...customGuests];
 }
 
+// ---- Stats ----
+function updateStats() {
+  buildGuests();
+  const paid = guests.filter(g => Number(gifts[g.id] || 0) > 0);
+  const total = paid.reduce((s, g) => s + Number(gifts[g.id] || 0), 0);
+  const arrivedSum = guests.reduce((s, g) => s + Number(arrived[g.id] || 0), 0);
+  const expectedSum = guests.reduce((s, g) => s + Number(g.count || 0), 0);
+  document.getElementById('totalAmount').textContent = '₪' + total.toLocaleString('he-IL');
+  document.getElementById('paidCount').textContent = paid.length;
+  document.getElementById('arrivedTotal').textContent = arrivedSum;
+  document.getElementById('expectedTotal').textContent = expectedSum;
+  document.getElementById('remainCount').textContent = guests.length - paid.length;
+  document.getElementById('totalGuests').textContent = guests.length;
+}
+
+// ---- Filters ----
 function setGiftFilter(f) {
   giftFilter = f;
   document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -316,35 +420,55 @@ function setGiftFilter(f) {
   renderTable();
 }
 
+// ---- Group filter dropdown ----
 function populateGroupFilter() {
-  const groups = [...new Set(GUESTS_DATA.map(g => g.group).filter(Boolean))].sort();
+  const groups = [...new Set(guests.map(g => g.group).filter(Boolean))].sort();
   const sel = document.getElementById('groupFilter');
+  const cur = sel.value;
+  sel.innerHTML = '<option value="">כל הקבוצות</option>';
   groups.forEach(g => {
     const opt = document.createElement('option');
-    opt.value = g;
-    opt.textContent = g;
+    opt.value = g; opt.textContent = g;
+    if (g === cur) opt.selected = true;
     sel.appendChild(opt);
   });
 }
 
+function populateModalGroups(selectVal) {
+  const groups = [...new Set(guests.map(g => g.group).filter(Boolean))].sort();
+  const sel = document.getElementById('fGroup');
+  sel.innerHTML = '<option value="">ללא קבוצה</option>';
+  groups.forEach(g => {
+    const opt = document.createElement('option');
+    opt.value = g; opt.textContent = g;
+    if (g === selectVal) opt.selected = true;
+    sel.appendChild(opt);
+  });
+}
+
+// ---- Render Table ----
 function renderTable() {
+  buildGuests();
+  populateGroupFilter();
   const search = document.getElementById('searchInput').value.trim().toLowerCase();
   const groupSel = document.getElementById('groupFilter').value;
   const tbody = document.getElementById('tableBody');
   tbody.innerHTML = '';
 
-  let filtered = GUESTS_DATA.filter(g => {
+  let filtered = guests.filter(g => {
     const matchSearch = !search || g.name.toLowerCase().includes(search);
     const matchGroup = !groupSel || g.group === groupSel;
     const giftVal = Number(gifts[g.id] || 0);
+    const arrVal = Number(arrived[g.id] || 0);
     const matchGift = giftFilter === 'all' ||
       (giftFilter === 'paid' && giftVal > 0) ||
-      (giftFilter === 'unpaid' && giftVal === 0);
+      (giftFilter === 'unpaid' && giftVal === 0) ||
+      (giftFilter === 'arrived' && arrVal > 0);
     return matchSearch && matchGroup && matchGift;
   });
 
   document.getElementById('resultCount').textContent =
-    filtered.length + ' תוצאות מתוך ' + GUESTS_DATA.length + ' מוזמנים';
+    filtered.length + ' תוצאות מתוך ' + guests.length + ' מוזמנים';
 
   if (filtered.length === 0) {
     document.getElementById('noResults').style.display = '';
@@ -356,73 +480,184 @@ function renderTable() {
 
   filtered.forEach(g => {
     const giftVal = gifts[g.id] || '';
-    const hasgift = Number(giftVal) > 0;
+    const arrVal = arrived[g.id] || '';
+    const hasGift = Number(giftVal) > 0;
+    const hasArr = Number(arrVal) > 0;
+    const isCustom = g.id >= 100000;
     const tr = document.createElement('tr');
-    if (hasgift) tr.classList.add('has-gift');
+    if (hasGift) tr.classList.add('has-gift');
+    if (isCustom) tr.classList.add('custom-row');
+
     tr.innerHTML = \`
-      <td class="name">\${g.name}</td>
-      <td class="group-cell">\${g.group || ''}</td>
+      <td class="name">\${escHtml(g.name)}\${isCustom ? ' <span style="font-size:0.7rem;color:#4a9a6a">●חדש</span>' : ''}</td>
+      <td class="group-cell">\${escHtml(g.group || '')}</td>
       <td class="count">\${g.count}</td>
-      <td class="gift-cell">
-        <input
-          class="gift-input \${hasgift ? 'filled' : ''}"
-          type="number"
-          min="0"
-          step="50"
-          placeholder="סכום"
-          value="\${giftVal}"
-          data-id="\${g.id}"
-          onchange="updateGift(this)"
-          oninput="updateGift(this)"
-        >
+      <td class="num-cell">
+        <input class="num-input arrived-input \${hasArr ? 'filled' : ''}"
+          type="number" min="0" placeholder="כמה?"
+          value="\${arrVal}" data-id="\${g.id}"
+          onchange="updateArrived(this)" oninput="updateArrived(this)">
+      </td>
+      <td class="num-cell">
+        <input class="num-input gift-input \${hasGift ? 'filled' : ''}"
+          type="number" min="0" step="50" placeholder="סכום"
+          value="\${giftVal}" data-id="\${g.id}"
+          onchange="updateGift(this)" oninput="updateGift(this)">
+      </td>
+      <td>
+        <div class="action-btns">
+          <button class="action-btn edit-btn" title="עריכה" onclick="openModal('edit', \${g.id})">✏️</button>
+          \${isCustom ? \`<button class="action-btn delete-btn" title="מחיקה" onclick="deleteGuest(\${g.id})">🗑️</button>\` : ''}
+        </div>
       </td>
     \`;
     tbody.appendChild(tr);
   });
 }
 
+function escHtml(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+// ---- Update gift/arrived ----
 function updateGift(input) {
   const id = input.getAttribute('data-id');
   const val = Number(input.value);
-  if (val > 0) {
-    gifts[id] = val;
-    input.classList.add('filled');
-    input.closest('tr').classList.add('has-gift');
-  } else {
-    delete gifts[id];
-    input.classList.remove('filled');
-    input.closest('tr').classList.remove('has-gift');
-  }
-  saveGifts();
+  if (val > 0) { gifts[id] = val; input.classList.add('filled'); input.closest('tr').classList.add('has-gift'); }
+  else { delete gifts[id]; input.classList.remove('filled'); input.closest('tr').classList.remove('has-gift'); }
+  saveAll();
 }
 
+function updateArrived(input) {
+  const id = input.getAttribute('data-id');
+  const val = Number(input.value);
+  if (val > 0) { arrived[id] = val; input.classList.add('filled'); }
+  else { delete arrived[id]; input.classList.remove('filled'); }
+  saveAll();
+}
+
+// ---- Modal ----
+let modalMode = 'add';
+
+function openModal(mode, id) {
+  modalMode = mode;
+  document.getElementById('modalOverlay').classList.add('open');
+  document.getElementById('fGroupNew').value = '';
+
+  if (mode === 'add') {
+    document.getElementById('modalTitle').textContent = '➕ הוסף מוזמן';
+    document.getElementById('editId').value = '';
+    document.getElementById('fName').value = '';
+    document.getElementById('fPhone').value = '';
+    document.getElementById('fCount').value = 1;
+    populateModalGroups('');
+  } else {
+    document.getElementById('modalTitle').textContent = '✏️ עריכת מוזמן';
+    const g = guests.find(x => String(x.id) === String(id));
+    if (!g) return;
+    document.getElementById('editId').value = id;
+    document.getElementById('fName').value = g.name;
+    document.getElementById('fPhone').value = g.phone || '';
+    document.getElementById('fCount').value = g.count || 1;
+    populateModalGroups(g.group || '');
+  }
+  document.getElementById('fName').focus();
+}
+
+function closeModal() {
+  document.getElementById('modalOverlay').classList.remove('open');
+}
+
+function closeModalOnBg(e) {
+  if (e.target === document.getElementById('modalOverlay')) closeModal();
+}
+
+function addNewGroup() {
+  const val = document.getElementById('fGroupNew').value.trim();
+  if (!val) return;
+  const sel = document.getElementById('fGroup');
+  // check if exists
+  const existing = [...sel.options].find(o => o.value === val);
+  if (!existing) {
+    const opt = document.createElement('option');
+    opt.value = val; opt.textContent = val;
+    sel.appendChild(opt);
+  }
+  sel.value = val;
+  document.getElementById('fGroupNew').value = '';
+}
+
+function saveModal() {
+  const name = document.getElementById('fName').value.trim();
+  if (!name) { alert('שם מוזמן הוא שדה חובה'); return; }
+  const phone = document.getElementById('fPhone').value.trim();
+  const count = Number(document.getElementById('fCount').value) || 1;
+  const group = document.getElementById('fGroup').value;
+  const newGroupText = document.getElementById('fGroupNew').value.trim();
+  const finalGroup = newGroupText || group;
+
+  if (modalMode === 'add') {
+    const newGuest = { id: nextCustomId++, name, phone, count, group: finalGroup, gift: 0 };
+    customGuests.push(newGuest);
+  } else {
+    const id = document.getElementById('editId').value;
+    const isCustom = Number(id) >= 100000;
+    if (isCustom) {
+      const idx = customGuests.findIndex(g => String(g.id) === String(id));
+      if (idx >= 0) {
+        customGuests[idx] = { ...customGuests[idx], name, phone, count, group: finalGroup };
+      }
+    } else {
+      guestEdits[id] = { name, phone, count, group: finalGroup };
+    }
+  }
+
+  closeModal();
+  saveAll();
+  renderTable();
+}
+
+function deleteGuest(id) {
+  if (!confirm('למחוק את המוזמן מהרשימה?')) return;
+  const idx = customGuests.findIndex(g => g.id === id);
+  if (idx >= 0) {
+    customGuests.splice(idx, 1);
+    delete gifts[id];
+    delete arrived[id];
+    saveAll();
+    renderTable();
+  }
+}
+
+// ---- Export ----
 function exportExcel() {
-  const data = GUESTS_DATA.map(g => ({
+  buildGuests();
+  const data = guests.map(g => ({
     'שם מוזמן': g.name,
     'נייד': g.phone,
-    'כמה מגיעים': g.count,
+    'ציפי (כמה מגיעים)': g.count,
+    'הגיעו בפועל': Number(arrived[g.id] || 0),
     'קבוצה': g.group,
     'מתנה (₪)': Number(gifts[g.id] || 0)
   }));
 
-  const ws = XLSX.utils.json_to_sheet(data, { skipHeader: false });
-
-  // Column widths
-  ws['!cols'] = [
-    {wch: 25}, {wch: 14}, {wch: 12}, {wch: 28}, {wch: 14}
-  ];
+  const ws = XLSX.utils.json_to_sheet(data);
+  ws['!cols'] = [{wch:25},{wch:14},{wch:14},{wch:14},{wch:28},{wch:14}];
 
   const wb = XLSX.utils.book_new();
   XLSX.utils.book_append_sheet(wb, ws, 'מתנות חתונה');
 
-  // Summary sheet
-  const paid = Object.entries(gifts).filter(([k,v]) => v > 0);
-  const total = paid.reduce((s,[,v]) => s + Number(v), 0);
+  const paid = guests.filter(g => Number(gifts[g.id] || 0) > 0);
+  const total = paid.reduce((s,g) => s + Number(gifts[g.id]||0), 0);
+  const arrivedSum = guests.reduce((s,g) => s + Number(arrived[g.id]||0), 0);
+  const expectedSum = guests.reduce((s,g) => s + Number(g.count||0), 0);
   const summaryData = [
     {'סטטיסטיקה': 'סה"כ מתנות', 'ערך': '₪' + total.toLocaleString('he-IL')},
-    {'סטטיסטיקה': 'שילמו מתנה', 'ערך': paid.length + ' אנשים'},
-    {'סטטיסטיקה': 'טרם הוזן', 'ערך': (GUESTS_DATA.length - paid.length) + ' אנשים'},
-    {'סטטיסטיקה': 'סה"כ מוזמנים', 'ערך': GUESTS_DATA.length + ' אנשים'},
+    {'סטטיסטיקה': 'שילמו מתנה', 'ערך': paid.length + ' קבוצות'},
+    {'סטטיסטיקה': 'הגיעו בפועל', 'ערך': arrivedSum + ' אנשים'},
+    {'סטטיסטיקה': 'ציפי', 'ערך': expectedSum + ' אנשים'},
+    {'סטטיסטיקה': 'טרם הוזנה מתנה', 'ערך': (guests.length - paid.length) + ' קבוצות'},
+    {'סטטיסטיקה': 'סה"כ ברשימה', 'ערך': guests.length + ' קבוצות'},
   ];
   const ws2 = XLSX.utils.json_to_sheet(summaryData);
   XLSX.utils.book_append_sheet(wb, ws2, 'סיכום');
@@ -430,8 +665,9 @@ function exportExcel() {
   XLSX.writeFile(wb, 'מתנות_חתונה.xlsx');
 }
 
-// Init
-loadGifts();
+// ---- Init ----
+loadAll();
+buildGuests();
 populateGroupFilter();
 renderTable();
 updateStats();
