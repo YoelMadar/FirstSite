@@ -138,6 +138,27 @@
     tbody tr.has-gift { background: #f0faf4; }
     tbody tr.has-gift:hover { background: #e8f8ee; }
     tbody tr.custom-row { border-right: 3px solid #4a9a6a; }
+    tbody tr.group-header td {
+      background: linear-gradient(135deg, #ede0f0, #f5ecf5);
+      font-weight: 700;
+      color: #6a3a6a;
+      font-size: 0.92rem;
+      padding: 8px 12px;
+      border-bottom: 2px solid #d8b8d8;
+      border-top: 3px solid #c090c0;
+      letter-spacing: 0.5px;
+    }
+    tbody tr.group-header .group-badge {
+      display: inline-block;
+      background: #8b5e83;
+      color: white;
+      border-radius: 12px;
+      padding: 1px 10px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
     td { padding: 8px 10px; font-size: 0.87rem; }
     td.name { font-weight: 500; }
     td.group-cell { color: #8a7a8a; font-size: 0.8rem; }
@@ -478,40 +499,69 @@ function renderTable() {
   document.getElementById('noResults').style.display = 'none';
   document.getElementById('guestsTable').style.display = '';
 
+  // Group guests by group name, preserving original order
+  const groupOrder = [];
+  const groupMap = {};
   filtered.forEach(g => {
-    const giftVal = gifts[g.id] || '';
-    const arrVal = arrived[g.id] || '';
-    const hasGift = Number(giftVal) > 0;
-    const hasArr = Number(arrVal) > 0;
-    const isCustom = g.id >= 100000;
-    const tr = document.createElement('tr');
-    if (hasGift) tr.classList.add('has-gift');
-    if (isCustom) tr.classList.add('custom-row');
+    const grp = g.group || 'ללא קבוצה';
+    if (!groupMap[grp]) { groupMap[grp] = []; groupOrder.push(grp); }
+    groupMap[grp].push(g);
+  });
 
-    tr.innerHTML = \`
-      <td class="name">\${escHtml(g.name)}\${isCustom ? ' <span style="font-size:0.7rem;color:#4a9a6a">●חדש</span>' : ''}</td>
-      <td class="group-cell">\${escHtml(g.group || '')}</td>
-      <td class="count">\${g.count}</td>
-      <td class="num-cell">
-        <input class="num-input arrived-input \${hasArr ? 'filled' : ''}"
-          type="number" min="0" placeholder="כמה?"
-          value="\${arrVal}" data-id="\${g.id}"
-          onchange="updateArrived(this)" oninput="updateArrived(this)">
-      </td>
-      <td class="num-cell">
-        <input class="num-input gift-input \${hasGift ? 'filled' : ''}"
-          type="number" min="0" step="50" placeholder="סכום"
-          value="\${giftVal}" data-id="\${g.id}"
-          onchange="updateGift(this)" oninput="updateGift(this)">
-      </td>
-      <td>
-        <div class="action-btns">
-          <button class="action-btn edit-btn" title="עריכה" onclick="openModal('edit', \${g.id})">✏️</button>
-          \${isCustom ? \`<button class="action-btn delete-btn" title="מחיקה" onclick="deleteGuest(\${g.id})">🗑️</button>\` : ''}
-        </div>
-      </td>
-    \`;
-    tbody.appendChild(tr);
+  const isGrouped = !document.getElementById('searchInput').value.trim(); // show headers only when not searching
+
+  groupOrder.forEach(grp => {
+    // Group header row (only when not in search mode or filter-by-gift)
+    if (isGrouped) {
+      const members = groupMap[grp];
+      const grpGift = members.reduce((s,g) => s + Number(gifts[g.id]||0), 0);
+      const grpArr  = members.reduce((s,g) => s + Number(arrived[g.id]||0), 0);
+      const grpExp  = members.reduce((s,g) => s + Number(g.count||0), 0);
+      const hdr = document.createElement('tr');
+      hdr.classList.add('group-header');
+      hdr.innerHTML = \`<td colspan="6">
+        👨‍👩‍👧 \${escHtml(grp)}
+        <span class="group-badge">\${members.length} משפחות/אנשים</span>
+        <span style="font-size:0.78rem;color:#8a6a8a;margin-right:8px">ציפי: \${grpExp} | הגיעו: \${grpArr} | מתנות: ₪\${grpGift.toLocaleString('he-IL')}</span>
+      </td>\`;
+      tbody.appendChild(hdr);
+    }
+
+    groupMap[grp].forEach(g => {
+      const giftVal = gifts[g.id] || '';
+      const arrVal = arrived[g.id] || '';
+      const hasGift = Number(giftVal) > 0;
+      const hasArr = Number(arrVal) > 0;
+      const isCustom = g.id >= 100000;
+      const tr = document.createElement('tr');
+      if (hasGift) tr.classList.add('has-gift');
+      if (isCustom) tr.classList.add('custom-row');
+
+      tr.innerHTML = \`
+        <td class="name">\${escHtml(g.name)}\${isCustom ? ' <span style="font-size:0.7rem;color:#4a9a6a">●חדש</span>' : ''}</td>
+        <td class="group-cell">\${escHtml(g.group || '')}</td>
+        <td class="count">\${g.count}</td>
+        <td class="num-cell">
+          <input class="num-input arrived-input \${hasArr ? 'filled' : ''}"
+            type="number" min="0" placeholder="כמה?"
+            value="\${arrVal}" data-id="\${g.id}"
+            onchange="updateArrived(this)" oninput="updateArrived(this)">
+        </td>
+        <td class="num-cell">
+          <input class="num-input gift-input \${hasGift ? 'filled' : ''}"
+            type="number" min="0" step="50" placeholder="סכום"
+            value="\${giftVal}" data-id="\${g.id}"
+            onchange="updateGift(this)" oninput="updateGift(this)">
+        </td>
+        <td>
+          <div class="action-btns">
+            <button class="action-btn edit-btn" title="עריכה" onclick="openModal('edit', \${g.id})">✏️</button>
+            \${isCustom ? \`<button class="action-btn delete-btn" title="מחיקה" onclick="deleteGuest(\${g.id})">🗑️</button>\` : ''}
+          </div>
+        </td>
+      \`;
+      tbody.appendChild(tr);
+    });
   });
 }
 
