@@ -519,11 +519,11 @@ function renderTable() {
       const grpExp  = members.reduce((s,g) => s + Number(g.count||0), 0);
       const hdr = document.createElement('tr');
       hdr.classList.add('group-header');
-      hdr.innerHTML = \`<td colspan="6">
-        👨‍👩‍👧 \${escHtml(grp)}
-        <span class="group-badge">\${members.length} משפחות/אנשים</span>
-        <span style="font-size:0.78rem;color:#8a6a8a;margin-right:8px">ציפי: \${grpExp} | הגיעו: \${grpArr} | מתנות: ₪\${grpGift.toLocaleString('he-IL')}</span>
-      </td>\`;
+      hdr.innerHTML = `<td colspan="6">
+        👨‍👩‍👧 ${escHtml(grp)}
+        <span class="group-badge">${members.length} משפחות/אנשים</span>
+        <span style="font-size:0.78rem;color:#8a6a8a;margin-right:8px">ציפי: ${grpExp} | הגיעו: ${grpArr} | מתנות: ₪${grpGift.toLocaleString('he-IL')}</span>
+      </td>`;
       tbody.appendChild(hdr);
     }
 
@@ -537,29 +537,29 @@ function renderTable() {
       if (hasGift) tr.classList.add('has-gift');
       if (isCustom) tr.classList.add('custom-row');
 
-      tr.innerHTML = \`
-        <td class="name">\${escHtml(g.name)}\${isCustom ? ' <span style="font-size:0.7rem;color:#4a9a6a">●חדש</span>' : ''}</td>
-        <td class="group-cell">\${escHtml(g.group || '')}</td>
-        <td class="count">\${g.count}</td>
+      tr.innerHTML = `
+        <td class="name">${escHtml(g.name)}${isCustom ? ' <span style="font-size:0.7rem;color:#4a9a6a">●חדש</span>' : ''}</td>
+        <td class="group-cell">${escHtml(g.group || '')}</td>
+        <td class="count">${g.count}</td>
         <td class="num-cell">
-          <input class="num-input arrived-input \${hasArr ? 'filled' : ''}"
+          <input class="num-input arrived-input ${hasArr ? 'filled' : ''}"
             type="number" min="0" placeholder="כמה?"
-            value="\${arrVal}" data-id="\${g.id}"
+            value="${arrVal}" data-id="${g.id}"
             onchange="updateArrived(this)" oninput="updateArrived(this)">
         </td>
         <td class="num-cell">
-          <input class="num-input gift-input \${hasGift ? 'filled' : ''}"
+          <input class="num-input gift-input ${hasGift ? 'filled' : ''}"
             type="number" min="0" step="50" placeholder="סכום"
-            value="\${giftVal}" data-id="\${g.id}"
+            value="${giftVal}" data-id="${g.id}"
             onchange="updateGift(this)" oninput="updateGift(this)">
         </td>
         <td>
           <div class="action-btns">
-            <button class="action-btn edit-btn" title="עריכה" onclick="openModal('edit', \${g.id})">✏️</button>
-            \${isCustom ? \`<button class="action-btn delete-btn" title="מחיקה" onclick="deleteGuest(\${g.id})">🗑️</button>\` : ''}
+            <button class="action-btn edit-btn" title="עריכה" onclick="openModal('edit', ${g.id})">✏️</button>
+            ${isCustom ? `<button class="action-btn delete-btn" title="מחיקה" onclick="deleteGuest(${g.id})">🗑️</button>` : ''}
           </div>
         </td>
-      \`;
+      `;
       tbody.appendChild(tr);
     });
   });
