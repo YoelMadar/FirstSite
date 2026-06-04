@@ -1,12 +1,72 @@
 <!DOCTYPE html>
-<html>
+<html lang="he" dir="rtl">
 <head>
-<title>Page Title</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>הגלריה שלנו · חתונה</title>
+  <meta name="description" content="אלבום התמונות מהחתונה שלנו">
+  <meta property="og:title" content="הגלריה שלנו · חתונה">
+  <meta property="og:description" content="כל הרגעים היפים מהיום הגדול שלנו">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;700&family=Heebo:wght@200;300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<h1>This is a Heading</h1>
-<p>This is a paragraph.</p>
+  <!-- ===================== מסך פתיחה ===================== -->
+  <header class="cover" id="top">
+    <div class="cover__inner">
+      <p class="cover__pre">ברוכים הבאים לאלבום של</p>
+      <h1 class="cover__names" id="names">יואל <span>&amp;</span> הכלה</h1>
+      <p class="cover__date" id="date">כ״ח באייר תשפ״ו · מאי 2026</p>
+      <a class="cover__scroll" href="#gallery" aria-label="גלול לגלריה">
+        <span></span>
+        צפו בתמונות
+      </a>
+    </div>
+  </header>
 
+  <!-- ===================== ניווט / סינון ===================== -->
+  <nav class="filters" id="filters" aria-label="סינון לפי קטגוריה">
+    <div class="filters__inner" id="filterButtons"><!-- נבנה ב-JS --></div>
+  </nav>
+
+  <!-- ===================== הגלריה ===================== -->
+  <main class="gallery" id="gallery">
+    <div class="gallery__grid" id="grid" aria-live="polite"><!-- נבנה ב-JS --></div>
+    <p class="gallery__empty" id="emptyState" hidden>אין תמונות בקטגוריה הזו.</p>
+    <p class="gallery__hint" id="loadHint"></p>
+  </main>
+
+  <!-- ===================== כותרת תחתונה ===================== -->
+  <footer class="site-foot">
+    <div class="site-foot__mark">♥</div>
+    <p>תודה שחגגתם איתנו.</p>
+    <p class="site-foot__small">לחצו על תמונה כדי להגדיל · הורדה דרך כפתור ההורדה בתצוגה</p>
+  </footer>
+
+  <!-- ===================== Lightbox ===================== -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="תצוגת תמונה" hidden>
+    <button class="lightbox__close" id="lbClose" aria-label="סגור">&times;</button>
+    <button class="lightbox__nav lightbox__nav--prev" id="lbPrev" aria-label="הקודם">&#8250;</button>
+    <button class="lightbox__nav lightbox__nav--next" id="lbNext" aria-label="הבא">&#8249;</button>
+    <figure class="lightbox__stage">
+      <img id="lbImg" alt="">
+      <figcaption class="lightbox__bar">
+        <span id="lbCaption"></span>
+        <span class="lightbox__bar-right">
+          <span id="lbCounter" class="lightbox__counter"></span>
+          <a id="lbDownload" class="lightbox__download" download aria-label="הורד תמונה">הורדה ↓</a>
+        </span>
+      </figcaption>
+    </figure>
+  </div>
+
+  <a href="#top" class="to-top" id="toTop" aria-label="חזרה למעלה">↑</a>
+
+  <script src="photos/manifest.js"></script>
+  <script src="js/gallery.js"></script>
 </body>
 </html>
