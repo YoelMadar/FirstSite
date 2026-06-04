@@ -31,6 +31,76 @@ body {
 
 img { display: block; max-width: 100%; }
 
+/* ===================== מסך כניסה (סיסמה) ===================== */
+.is-locked { overflow: hidden; }
+.gate {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+  background:
+    radial-gradient(120% 90% at 50% 0%, var(--white) 0%, var(--bg) 45%, var(--bg-warm) 100%);
+  transition: opacity .5s var(--ease), visibility .5s var(--ease);
+}
+.gate.is-open { opacity: 0; visibility: hidden; }
+.gate__card {
+  width: min(380px, 92vw);
+  text-align: center;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: clamp(2rem, 6vw, 3rem) clamp(1.5rem, 5vw, 2.5rem);
+  box-shadow: var(--shadow);
+  animation: fade-up .7s var(--ease) both;
+}
+.gate__mark { color: var(--accent); font-size: 1.7rem; margin-bottom: .8rem; }
+.gate__title {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(1.7rem, 6vw, 2.2rem);
+  margin: 0 0 .5rem;
+}
+.gate__sub { color: var(--ink-soft); font-size: .92rem; margin: 0 0 1.6rem; }
+.gate__input {
+  width: 100%;
+  font-family: var(--sans);
+  font-size: 1.05rem;
+  text-align: center;
+  letter-spacing: .15em;
+  padding: .8rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: var(--bg);
+  color: var(--ink);
+  transition: border-color .3s var(--ease);
+}
+.gate__input:focus { outline: none; border-color: var(--accent); }
+.gate__btn {
+  width: 100%;
+  margin-top: .8rem;
+  font-family: var(--sans);
+  font-size: 1rem;
+  letter-spacing: .12em;
+  padding: .8rem 1rem;
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: #fff;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all .3s var(--ease);
+}
+.gate__btn:hover { background: transparent; color: var(--ink); }
+.gate__error { color: #b4524a; font-size: .86rem; margin: 1rem 0 0; }
+.gate.shake .gate__card { animation: shake .45s var(--ease); }
+@keyframes shake {
+  10%, 90% { transform: translateX(-2px); }
+  20%, 80% { transform: translateX(4px); }
+  30%, 50%, 70% { transform: translateX(-7px); }
+  40%, 60% { transform: translateX(7px); }
+}
+
 /* ===================== מסך פתיחה ===================== */
 .cover {
   min-height: 100svh;

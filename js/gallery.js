@@ -204,5 +204,8 @@
     buildFilters();
     setCategory('all');
   }
-  init();
+
+  // מופעל ע"י מסך הסיסמה (lock.js) רק לאחר כניסה מוצלחת
+  window.__startGallery = init;
+  if (window.__UNLOCKED__) init();
 })();

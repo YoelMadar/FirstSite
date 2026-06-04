@@ -15,6 +15,19 @@
 </head>
 <body>
 
+  <!-- ===================== מסך כניסה (סיסמה) ===================== -->
+  <div class="gate" id="gate">
+    <form class="gate__card" id="gateForm" autocomplete="off">
+      <div class="gate__mark">♥</div>
+      <h1 class="gate__title">האלבום שלנו</h1>
+      <p class="gate__sub">הזינו את הסיסמה כדי לצפות בתמונות</p>
+      <input class="gate__input" id="gateInput" type="password" inputmode="numeric"
+             aria-label="סיסמה" placeholder="סיסמה" autofocus>
+      <button class="gate__btn" type="submit">כניסה</button>
+      <p class="gate__error" id="gateError" hidden>סיסמה שגויה, נסו שוב</p>
+    </form>
+  </div>
+
   <!-- ===================== מסך פתיחה ===================== -->
   <header class="cover" id="top">
     <div class="cover__inner">
@@ -68,5 +81,6 @@
 
   <script src="photos/manifest.js"></script>
   <script src="js/gallery.js"></script>
+  <script src="js/lock.js"></script>
 </body>
 </html>
