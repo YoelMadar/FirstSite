@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "warehouse": { "name": "המחסן שלי", "width": 30, "depth": 20, "wallHeight": 4.5 },
+  "aisles": [
+    {
+      "id": "A",
+      "name": "מעבר A",
+      "origin": { "x": 5, "z": 3 },
+      "direction": "z",
+      "shelfGap": 0.15,
+      "shelves": [
+        { "id": "A1", "name": "מדף A1", "size": { "w": 3, "h": 2.4, "d": 1.2 }, "levels": 3, "faces": { "front": "photos/A1-front.jpg", "back": null }, "color": "#3b6ea5" },
+        { "id": "A2", "name": "מדף A2", "size": { "w": 3, "h": 2.4, "d": 1.2 }, "levels": 3, "faces": { "front": "photos/A2-front.jpg", "back": null }, "color": "#3b6ea5" },
+        { "id": "A3", "name": "מדף A3", "size": { "w": 3, "h": 2.4, "d": 1.2 }, "levels": 4, "faces": { "front": "photos/A3-front.jpg", "back": null }, "color": "#3b6ea5" },
+        { "id": "A4", "name": "מדף A4", "size": { "w": 3, "h": 2.4, "d": 1.2 }, "levels": 3, "faces": { "front": "photos/A4-front.jpg", "back": null }, "color": "#3b6ea5" }
+      ]
+    },
+    {
+      "id": "B",
+      "name": "מעבר B",
+      "origin": { "x": 13, "z": 3 },
+      "direction": "z",
+      "shelfGap": 0.15,
+      "shelves": [
+        { "id": "B1", "name": "מדף B1", "size": { "w": 3, "h": 2.4, "d": 1.2 }, "levels": 3, "faces": { "front": "photos/B1-front.jpg", "back": "photos/B1-back.jpg" }, "color": "#b5713b" },
+        { "id": "B2", "name": "מדף B2", "size": { "w": 3, "h": 2.4, "d": 1.2 }, "levels": 3, "faces": { "front": "photos/B2-front.jpg", "back": null }, "color": "#b5713b" },
+        { "id": "B3", "name": "מדף B3", "size": { "w": 3, "h": 2.4, "d": 1.2 }, "levels": 2, "faces": { "front": "photos/B3-front.jpg", "back": null }, "color": "#b5713b" },
+        { "id": "B4", "name": "מדף B4", "size": { "w": 3, "h": 2.4, "d": 1.2 }, "levels": 3, "faces": { "front": "photos/B4-front.jpg", "back": null }, "color": "#b5713b" }
+      ]
+    },
+    {
+      "id": "C",
+      "name": "מעבר C",
+      "origin": { "x": 21, "z": 3 },
+      "direction": "z",
+      "shelfGap": 0.15,
+      "shelves": [
+        { "id": "C1", "name": "מדף C1", "size": { "w": 3, "h": 2.4, "d": 1.2 }, "levels": 3, "faces": { "front": "photos/C1-front.jpg", "back": null }, "color": "#4a8a5c" },
+        { "id": "C2", "name": "מדף C2", "size": { "w": 3, "h": 2.4, "d": 1.2 }, "levels": 3, "faces": { "front": "photos/C2-front.jpg", "back": null }, "color": "#4a8a5c" },
+        { "id": "C3", "name": "מדף C3", "size": { "w": 3, "h": 2.4, "d": 1.2 }, "levels": 3, "faces": { "front": "photos/C3-front.jpg", "back": null }, "color": "#4a8a5c" },
+        { "id": "C4", "name": "מדף C4", "size": { "w": 3, "h": 2.4, "d": 1.2 }, "levels": 5, "faces": { "front": "photos/C4-front.jpg", "back": null }, "color": "#4a8a5c" }
+      ]
+    }
+  ],
+  "products": [
+    { "id": "p1", "name": "ברגים 8 מ\"מ", "shelfId": "A1", "level": 2, "note": "צד ימין", "keywords": ["ברגים", "screws"] },
+    { "id": "p2", "name": "מסמרים", "shelfId": "A1", "level": 1, "note": "", "keywords": ["nails"] },
+    { "id": "p3", "name": "דבק עץ", "shelfId": "A2", "level": 3, "note": "קופסאות כחולות", "keywords": ["דבק", "glue"] },
+    { "id": "p4", "name": "צבע לבן 5 ליטר", "shelfId": "A3", "level": 1, "note": "", "keywords": ["צבע", "paint"] },
+    { "id": "p5", "name": "מברגות", "shelfId": "B1", "level": 2, "note": "ארגזים אפורים", "keywords": ["מברגה", "drill"] },
+    { "id": "p6", "name": "כבל חשמל 3x2.5", "shelfId": "B2", "level": 1, "note": "גלילים", "keywords": ["כבל", "חשמל", "cable"] },
+    { "id": "p7", "name": "סרט בידוד", "shelfId": "B2", "level": 3, "note": "", "keywords": ["בידוד", "tape"] },
+    { "id": "p8", "name": "ברזים", "shelfId": "B4", "level": 2, "note": "", "keywords": ["ברז", "אינסטלציה"] },
+    { "id": "p9", "name": "צינורות PVC", "shelfId": "C1", "level": 1, "note": "מאורכים על הרצפה ליד המדף", "keywords": ["צינור", "pvc"] },
+    { "id": "p10", "name": "כפפות עבודה", "shelfId": "C2", "level": 2, "note": "", "keywords": ["כפפות", "מיגון"] },
+    { "id": "p11", "name": "קסדות", "shelfId": "C2", "level": 3, "note": "", "keywords": ["קסדה", "מיגון", "בטיחות"] },
+    { "id": "p12", "name": "מנורות לד", "shelfId": "C4", "level": 4, "note": "זהירות שביר", "keywords": ["לד", "תאורה", "led"] }
+  ],
+  "spawn": { "x": 26, "z": 17, "yaw": 58 }
+}

@@ -1,12 +1,84 @@
 <!DOCTYPE html>
-<html>
+<html lang="he" dir="rtl">
 <head>
-<title>Page Title</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>סיור מחסן תלת־מימד</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏭</text></svg>">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="importmap">
+    { "imports": { "three": "./vendor/three.module.min.js" } }
+  </script>
 </head>
 <body>
+  <canvas id="scene"></canvas>
 
-<h1>This is a Heading</h1>
-<p>This is a paragraph.</p>
+  <!-- סרגל עליון: חיפוש + כפתורים -->
+  <div id="hud-top">
+    <div id="search-wrap">
+      <input id="search-input" type="search" placeholder="חפש מוצר או מדף…" autocomplete="off" enterkeyhint="search">
+      <div id="search-results" hidden></div>
+    </div>
+    <div id="hud-buttons">
+      <button id="btn-record" title="הקלטת סרטון"><span class="rec-dot"></span><span id="rec-label">הקלטה</span><span id="rec-timer" hidden>0:00</span></button>
+      <button id="btn-editor" title="מצב עריכה">⚙️</button>
+      <button id="btn-help" title="עזרה">?</button>
+    </div>
+  </div>
 
+  <div id="draft-badge" hidden>
+    <span>טיוטה — שינויים לא שמורים בקובץ</span>
+    <button id="btn-discard-draft">בטל טיוטה</button>
+  </div>
+
+  <div id="hint-look" hidden>לחץ על המסך כדי להסתובב עם העכבר · WASD או חצים לתנועה · ESC ליציאה</div>
+
+  <!-- ג'ויסטיק למובייל -->
+  <div id="joystick">
+    <div id="joystick-knob"></div>
+  </div>
+
+  <div id="toast" hidden></div>
+
+  <!-- פאנל עריכה -->
+  <aside id="editor-panel" hidden>
+    <header>
+      <h2>מצב עריכה</h2>
+      <button id="btn-editor-close">✕</button>
+    </header>
+    <nav id="editor-tabs">
+      <button data-tab="shelves" class="active">מדפים</button>
+      <button data-tab="products">מוצרים</button>
+      <button data-tab="export">שמירה</button>
+    </nav>
+    <section id="editor-content"></section>
+  </aside>
+
+  <!-- מסך עזרה -->
+  <div id="help-overlay" hidden>
+    <div id="help-card">
+      <h1>סיור מחסן תלת־מימד</h1>
+      <p>מערכת להדרכת עובדים: מסתובבים במחסן הווירטואלי, מוצאים מוצרים, מקליטים סרטון ושולחים בווצאפ.</p>
+      <h3>🖥️ במחשב</h3>
+      <ul>
+        <li>לחיצה על המסך — סיבוב המבט עם העכבר (ESC לשחרור)</li>
+        <li>WASD או חצים — הליכה</li>
+      </ul>
+      <h3>📱 בטלפון</h3>
+      <ul>
+        <li>ג'ויסטיק בפינה — הליכה</li>
+        <li>גרירת אצבע על המסך — סיבוב המבט</li>
+      </ul>
+      <h3>🔎 חיפוש</h3>
+      <p>מקלידים שם מוצר למעלה — המערכת מקפיצה אתכם למדף הנכון ומדליקה עליו אור ירוק.</p>
+      <h3>🎥 הקלטת סרטון</h3>
+      <p>כפתור "הקלטה" מתחיל להקליט את מה שרואים. לחיצה נוספת עוצרת, והקובץ יורד למכשיר — משם שולחים בווצאפ.</p>
+      <h3>⚙️ עדכון המחסן</h3>
+      <p>בכפתור העריכה מוסיפים מדפים, מחליפים תמונות ומתייגים מוצרים. בסיום מייצאים את קובץ ה־layout ושמים אותו בתיקיית <code>data/</code>, ואת התמונות בתיקיית <code>photos/</code>.</p>
+      <button id="btn-help-close">סגור</button>
+    </div>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>
